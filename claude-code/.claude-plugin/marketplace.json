@@ -10,6 +10,11 @@
       "dependencies": ["angular-skills"]
     },
     {
+      "name": "nestjs",
+      "source": "./plugins/nestjs",
+      "description": "Agentes dev y arquitectura para NestJS, política de calidad (SOLID, seguridad, docs, tests unitarios y e2e) y hooks. Sin dependencias externas."
+    },
+    {
       "name": "angular-skills",
       "description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
       "source": {

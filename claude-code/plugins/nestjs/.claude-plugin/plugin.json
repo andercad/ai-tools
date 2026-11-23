@@ -1,0 +1,6 @@
+{
+  "name": "nestjs",
+  "version": "0.1.0",
+  "description": "NestJS para Claude Code: agentes dev y arquitectura, política de calidad (SOLID, seguridad, documentación, tests unitarios y e2e), skills de desarrollo y de arquitectura, y hooks. Funciona con /spec y /spec-impl.",
+  "keywords": ["nestjs", "nodejs", "architecture", "typescript", "backend"]
+}
