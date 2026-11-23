@@ -1,0 +1,6 @@
+{
+  "name": "liferay",
+  "version": "0.1.0",
+  "description": "Liferay DXP para Claude Code: agentes dev y arquitectura, política de calidad (permisos, seguridad, documentación, tests unitarios y de integración), skills de desarrollo y de arquitectura, y hooks. Funciona con /spec y /spec-impl.",
+  "keywords": ["liferay", "dxp", "osgi", "client-extensions", "architecture"]
+}

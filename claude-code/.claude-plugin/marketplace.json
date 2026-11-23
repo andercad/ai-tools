@@ -20,6 +20,11 @@
       "description": "Agentes dev y arquitectura para Spring Boot 3.x/4.x, política de calidad (SOLID, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
     },
     {
+      "name": "liferay",
+      "source": "./plugins/liferay",
+      "description": "Agentes dev y arquitectura para Liferay DXP 2025.Q1+, política de calidad (permisos, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
+    },
+    {
       "name": "angular-skills",
       "description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
       "source": {
