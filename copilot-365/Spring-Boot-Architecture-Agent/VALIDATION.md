@@ -34,7 +34,7 @@ Resultado de la última ejecución: **OK**.
 - Se eliminaron los resultados contradictorios («0/8» con «sin errores», «FALLO» sin causa) del informe anterior.
 - v3: mensajería/eventos y REST completo en `spring-api-integration`; Spring Modulith en `spring-modularity-domain`; estrategia de pruebas en `spring-modernization-governance`; plantillas comunes (matriz de decisión, registro de riesgos, diagramas) y consulta de fuentes oficiales en las instrucciones; conversation starters en el README.
 - v4: una plantilla o checklist por skill (dos en modernización), cargada solo cuando se necesita; ZIP con `SKILL.md` en la raíz; máximo de preguntas aclaratorias unificado a 3 con los demás agentes.
-- v5: derivaciones a los agentes Angular, Liferay y NestJS; IA generativa (integración, OWASP Top 10 para LLM, cuotas y coste); mapa de normativa UE; criterio Spring Boot frente a NestJS; script de matriz de decisión con análisis de sensibilidad; paquete para VS Code (`build-vscode.ps1` en la raíz). Prompts 24 a 26.
+- v5: derivaciones a los agentes Angular, Liferay y NestJS; IA generativa (integración, OWASP Top 10 para LLM, cuotas y coste); mapa de normativa UE; criterio Spring Boot frente a NestJS; script de matriz de decisión con análisis de sensibilidad. Prompts 24 a 26.
 
 ## Limitaciones
 - **No se ha probado en Microsoft 365 Copilot.** La selección de skills la hace Agent Builder; hay que validarla con `validation/test-prompts.md`.

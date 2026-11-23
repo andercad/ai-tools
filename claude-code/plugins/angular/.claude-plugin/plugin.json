@@ -1,0 +1,7 @@
+{
+  "name": "angular",
+  "version": "0.3.0",
+  "description": "Angular para Claude Code: agentes dev y arquitectura, política de calidad (SOLID, accesibilidad, documentación, tests), skills de arquitectura y hooks. Reutiliza la skill oficial angular-developer como dependencia y funciona con /spec y /spec-impl.",
+  "keywords": ["angular", "architecture", "typescript"],
+  "dependencies": ["angular-skills"]
+}

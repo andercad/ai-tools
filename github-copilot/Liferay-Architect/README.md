@@ -12,7 +12,7 @@ Agente de desarrollo de Liferay DXP para GitHub Copilot, con 22 skills. Pensado 
    guidelines/coding-guidelines.md ← plantilla: adáptala al proyecto
    ```
 
-2. Revisa `guidelines/coding-guidelines.md`. Viene rellenada con los datos de InmoCaixa (paquete `com.caixa.inmo`, carpetas, castellano y catalán, librerías, GitFlow). Ajusta las rutas reales, el modelo de despliegue y las versiones.
+2. Revisa `guidelines/coding-guidelines.md`. Viene rellenada con los datos de Acme Portal (ejemplo ficticio) (paquete `com.acme.portal`, carpetas, castellano y catalán, librerías, GitFlow). Ajusta las rutas reales, el modelo de despliegue y las versiones.
 
 3. La carpeta `validation/` sirve para comprobar el agente cuando lo modifiques; no hace falta en el repositorio del proyecto.
 
@@ -20,7 +20,7 @@ Agente de desarrollo de Liferay DXP para GitHub Copilot, con 22 skills. Pensado 
 
 | Metodología | Dónde |
 |---|---|
-| Nomenclatura de módulos, paquetes y clases | Agente (reglas generales con `<base>`) y guidelines (paquete `com.caixa.inmo`) |
+| Nomenclatura de módulos, paquetes y clases | Agente (reglas generales con `<base>`) y guidelines (paquete `com.acme.portal`) |
 | Estructura de carpetas (`apis`, `cservicios`, recursos) | Guidelines |
 | Dependencias entre módulos | `liferay-workspace`: `compileOnly project(...)` o repositorio Maven corporativo (sustituye a `mavenLocal`) |
 | Constantes, render por defecto, preferencias, JSP, `portletNamespace`, `ParamUtil`, panel de control | `liferay-osgi` |

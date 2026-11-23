@@ -34,7 +34,7 @@ Y la calidad del contenido:
 - Derivaciones a los agentes Angular, Liferay y Spring Boot, y lectura del repositorio cuando hay acceso (VS Code).
 - IA generativa: integración (RAG, herramientas, streaming, evaluación), OWASP Top 10 para LLM, cuotas, latencia y coste por tokens.
 - Mapa de normativa UE (RGPD, ENS, NIS2, DORA, EAA, AI Act, CRA) y criterio NestJS frente a Spring Boot.
-- Script `decision_matrix.py` (total ponderado, criterio que decide, sensibilidad y robustez) y paquete para VS Code (`build-vscode.ps1` en la raíz). Prompts 23 a 25.
+- Script `decision_matrix.py` (total ponderado, criterio que decide, sensibilidad y robustez). Prompts 23 a 25.
 
 ## Limitaciones
 - La validación es estática: comprueba estructura y contenido, no el comportamiento del agente.

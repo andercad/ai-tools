@@ -40,13 +40,7 @@ Requisitos: las skills en Agent Builder están en preview y solo se ofrecen a or
 - Planifica el upgrade de Angular a la versión soportada actual.
 
 ## GitHub Copilot en VS Code
-Las mismas skills sirven para GitHub Copilot en VS Code (formato Agent Skills). Desde la carpeta raíz que contiene los cuatro agentes, ejecuta:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File build-vscode.ps1
-```
-
-El script valida los cuatro agentes y genera `vscode-agents.zip` con los agentes en `.github/agents` y sus 32 skills en `.github/skills`. Descomprímelo en la raíz del repositorio que quieras analizar, o copia su contenido a `~/.copilot/agents` y `~/.copilot/skills` para uso personal.
+Las mismas skills sirven para GitHub Copilot en VS Code (formato Agent Skills). No hay script de empaquetado en este repo: copia cada carpeta de `skills/<skill>` a `.github/skills/` del repositorio que quieras analizar (o a `~/.copilot/skills` para uso personal) y usa `AGENT_INSTRUCTIONS.md` como contenido de un agente en `.github/agents/`.
 - En VS Code el agente lee el repositorio, así que la evaluación parte de ficheros reales y no de supuestos.
 - Solo tiene herramientas de lectura, búsqueda y web: no edita ficheros ni ejecuta comandos. Si necesitas la matriz de decisión calculada, ejecuta `decision_matrix.py` o pide el cálculo paso a paso.
 - Los botones para pasar la conversación a otro de los cuatro agentes (handoffs) solo están disponibles en el harness Local.

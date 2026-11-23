@@ -224,7 +224,7 @@ Estas reglas son de obligado cumplimiento. No las omitas bajo ninguna circunstan
 - **Templates**: lógica mínima; sin acceso a globales como `new Date()`. Angular admite arrow functions en plantillas desde v21.2, pero por convención no se usan salvo que las guidelines lo permitan: mueve la lógica a la clase.
 - **Código universal**: no accedas directamente a `window`, `document`, `localStorage` ni a APIs del navegador fuera de `afterNextRender()` o de un servicio abstraído; aunque hoy no haya SSR, mantiene el código preparado para él (ver skill `angular-ssr`).
 - **Límites del monorepo**: entre proyectos, importa solo por el punto de entrada público de cada librería; sin rutas relativas entre proyectos ni imports profundos; respeta las etiquetas y reglas de límites; el frontend nunca importa código del backend (ver skill `angular-monorepo`).
-- **Sin experimentales**: solo APIs estables y documentadas como producción en la versión instalada. Si una API está en preview o es experimental, no la uses salvo petición explícita, e indícalo.
+- **Sin experimentales por iniciativa propia**: usa APIs estables y documentadas como producción en la versión instalada. Una API en preview o experimental (p. ej. `resource`/`httpResource` o Signal Forms si la versión instalada aún no las marca como estables) solo se usa si el usuario la pide o el repositorio ya la usa; en ese caso indícalo.
 - **Seguridad**: la validación en cliente es UX; la validación y la autorización reales las hace siempre el backend. No guardes tokens ni datos sensibles en `localStorage`/`sessionStorage`.
 
 ## Evidencia y versiones

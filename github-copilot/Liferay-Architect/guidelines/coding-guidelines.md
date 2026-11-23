@@ -1,13 +1,13 @@
-# Guidelines del proyecto — InmoCaixa
+# Guidelines del proyecto — Acme Portal
 
 Fichero que el agente lee antes de cualquier tarea. Contiene **solo lo específico de este proyecto**; las reglas generales están en el agente y sus skills. Si algo de aquí contradice al agente, prevalece este fichero.
 
 ## Proyecto
 
-- Cliente: CaixaBank (InmoCaixa).
-- Paquete base del proyecto: `com.caixa.inmo`.
-- Paquete base de los APIs genéricos del cliente (reutilizables entre proyectos): `com.caixa`.
-- Prefijo para client extensions, ERC y clases CSS: `inmo`.
+- Cliente: Acme Corp (Acme Portal).
+- Paquete base del proyecto: `com.acme.portal`.
+- Paquete base de los APIs genéricos del cliente (reutilizables entre proyectos): `com.acme`.
+- Prefijo para client extensions, ERC y clases CSS: `acme`.
 
 ## Estructura del workspace
 
@@ -15,12 +15,12 @@ Fichero que el agente lee antes de cualquier tarea. Contiene **solo lo específi
 modules/
   apis/                      ← APIs genéricos del cliente (una subcarpeta por API: <api>-api y <api>-impl)
     cservicios/              ← módulos de Service Builder genéricos
-  inmocaixa/                 ← módulos del proyecto
+  acmeportal/                 ← módulos del proyecto
     apis/                    ← APIs del proyecto (por ejemplo, integración con SAP)
     cservicios/              ← módulos de Service Builder del proyecto
 recursos/                    ← recursos genéricos (no Java ni temas)
   adts/ estructuras/ fragmentos/ plantillas/
-inmocaixa/recursos/          ← recursos del proyecto
+acmeportal/recursos/          ← recursos del proyecto
   adts/ estructuras/ fragmentos/ plantillas/
 ```
 
@@ -28,7 +28,7 @@ inmocaixa/recursos/          ← recursos del proyecto
 
 ## Nomenclatura
 
-- Symbolic Name y paquetes: `com.caixa.inmo.<modulo>.<tipo>` (proyecto) y `com.caixa.<modulo>.<tipo>` (APIs genéricos). Ejemplo: Send Emails → carpeta `send-emails-api`, paquete `com.caixa.send.emails.api`.
+- Symbolic Name y paquetes: `com.acme.portal.<modulo>.<tipo>` (proyecto) y `com.acme.<modulo>.<tipo>` (APIs genéricos). Ejemplo: Send Emails → carpeta `send-emails-api`, paquete `com.acme.send.emails.api`.
 - Resto de nomenclatura de módulos, paquetes y clases: la del agente.
 
 ## Idiomas
@@ -47,7 +47,7 @@ inmocaixa/recursos/          ← recursos del proyecto
 
 ## Plantillas
 
-- Servicios y helpers en plantillas mediante el Template Context Contributor del proyecto (`InmoTemplateContextContributor`), con la variable `inmoTemplateHelper`.
+- Servicios y helpers en plantillas mediante el Template Context Contributor del proyecto (`AcmeTemplateContextContributor`), con la variable `acmeTemplateHelper`.
 - Excepciones documentadas de uso de `serviceLocator`: ninguna. (Añade aquí cada excepción, con la plantilla y el motivo.)
 
 ## Modelo de despliegue y entornos

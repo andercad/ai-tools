@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Colección de herramientas de IA (no hay app ni build global): contenido en Markdown/PowerShell/Python que define agentes y skills. Idioma del contenido: español. Tres áreas independientes:
 
 - `claude-code/.claude/` — config de Claude Code: hook `PostToolUse` (`hooks/format-lint.mjs`, corre prettier + eslint con `npx` sobre el fichero editado; ignora `.claude/`, `node_modules/`, etc.), comando `/worktree` (worktree en `.trees/[nombre]` + subagente) y skill `telegram-send` (`send.mjs`, lee `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` de `settings.local.json`; no commitear secretos).
+- `claude-code/` es también un marketplace de plugins (`.claude-plugin/marketplace.json`). `claude-code/plugins/angular/` (piloto): agentes `angular-dev` y `angular-architect` (solo lectura), skills con `references/`, hooks (formato/lint y Stop que exige specs si `tests: required` en el `CLAUDE.md` del proyecto). Depende, vía entrada del marketplace con `git-subdir`, de la skill oficial `angular-developer` (angular/angular): no se copia. Funciona con `/spec` y `/spec-impl` (se instalan aparte): las reglas llegan por el `CLAUDE.md` del proyecto, que genera la skill `angular-project-guidelines`. Instalar: `claude plugin marketplace add ./claude-code`. Validar: `claude plugin validate claude-code/plugins/angular` y `node claude-code/plugins/angular/validation/check.mjs`. Sus skills derivan de `github-copilot/Angular-Architect` y `copilot-365/Angular-Enterprise-Architect`; los cambios no se sincronizan solos.
 - `copilot-365/<Agente>/` — agentes para Microsoft 365 Copilot (Agent Builder): Angular-Enterprise-Architect, Liferay-Enterprise-Architect, NestJS-Architecture-Agent, Spring-Boot-Architecture-Agent. Enfocados en decisiones de arquitectura.
 - `github-copilot/<Agente>/` — agentes para GitHub Copilot en VS Code: Angular-Architect, Liferay-Architect, NestJS-Architect, SpringBoot-Architect. Enfocados en desarrollo. `github-copilot/guidelines/coding-guidelines.md` es plantilla de convenciones por proyecto (el agente la lee antes de actuar).
 
@@ -24,7 +25,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File validation\validate.ps1 -Bui
 powershell -NoProfile -ExecutionPolicy Bypass -File validation\validate.ps1           # solo validar
 ```
 
-`validate.ps1` comprueba frontmatter, términos requeridos por skill (`$required`), escenarios de enrutamiento (la `description` de la skill debe contener el disparador) y mojibake. Si cambias una skill o su `description`, actualiza los arrays `$required`/`$scenarios` del script. El README del agente Angular menciona un `build-vscode.ps1` (genera `vscode-agents.zip` para VS Code) que no existe en este repo.
+`validate.ps1` comprueba frontmatter, términos requeridos por skill (`$required`), escenarios de enrutamiento (la `description` de la skill debe contener el disparador) y mojibake. Si cambias una skill o su `description`, actualiza los arrays `$required`/`$scenarios` del script. No existe script `build-vscode.ps1`; los README de copilot-365 explican la copia manual de `skills/` a `.github/skills/`.
 
 ## Estructura de un agente github-copilot
 

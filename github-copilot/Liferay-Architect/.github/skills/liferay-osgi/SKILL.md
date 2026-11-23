@@ -86,7 +86,7 @@ public class OrdersHelperImpl implements OrdersHelper {
 		return (group != null) && _ACME_SITE_KEYS.contains(group.getGroupKey());
 	}
 
-	private static final Set<String> _ACME_SITE_KEYS = Set.of("Inmo", "Inmo Admin");
+	private static final Set<String> _ACME_SITE_KEYS = Set.of("Acme", "Acme Admin");
 
 	@Reference
 	private GroupLocalService _groupLocalService;

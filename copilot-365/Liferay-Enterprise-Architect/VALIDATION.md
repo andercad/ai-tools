@@ -40,7 +40,7 @@ Calidad del contenido:
 - Instrucciones reescritas con el mismo esquema que los agentes de Spring Boot y NestJS y movidas de `agent/` a `AGENT_INSTRUCTIONS.md`.
 - `TEST-CASES.md` (6 frases sin criterio) pasó a `validation/test-prompts.md` con 24 prompts, resultado esperado y criterio de fallo.
 - Actualización 2026 contrastada con learn.liferay.com: Liferay CMS (GA en 2026.Q3), capacidades en maintenance mode desde 2026.Q1 (Web Content, Blogs, Documents and Media, Knowledge Base, Asset Libraries, Publications), segmentos locales deprecados en 2026.Q1 y deprecaciones de 2026.Q3 (Widget Pages, Apache OpenOffice). Prompt 25 añadido.
-- Después: lectura del repositorio cuando hay acceso (VS Code), integración con IA generativa fuera de la JVM con RAG que respeta permisos, búsqueda semántica, mapa de normativa UE, script `decision_matrix.py` y paquete para VS Code (`build-vscode.ps1` en la raíz). Prompts 26 a 28.
+- Después: lectura del repositorio cuando hay acceso (VS Code), integración con IA generativa fuera de la JVM con RAG que respeta permisos, búsqueda semántica, mapa de normativa UE, script `decision_matrix.py`. Prompts 26 a 28.
 
 ## Limitaciones
 - Validación estática: comprueba estructura y contenido, no la calidad de las respuestas.

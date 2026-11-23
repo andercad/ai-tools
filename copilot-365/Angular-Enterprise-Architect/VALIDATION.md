@@ -39,7 +39,7 @@ Calidad del contenido:
 - `backend-integration` y `diagnostics-devops-review` se renombraron a `angular-backend-integration` y `angular-architecture-assessment` (prefijo común y foco en evaluación).
 - Instrucciones reescritas con el mismo esquema que los agentes de Spring Boot y NestJS: rol de asesor, contexto sin acceso al repositorio, proporcionalidad, reglas de decisión, plantillas, formato completo, enrutamiento y límites. Se movieron de `agent/` a `AGENT_INSTRUCTIONS.md`.
 - `TEST-CASES.md` (6 frases sin criterio) pasó a `validation/test-prompts.md` con 24 prompts, resultado esperado y criterio de fallo.
-- Después: lectura del repositorio cuando hay acceso (VS Code), funcionalidades con IA generativa (BFF, streaming) y presentación segura del contenido generado, mapa de normativa UE, script `decision_matrix.py` y paquete para VS Code (`build-vscode.ps1` en la raíz). Prompts 25 a 28.
+- Después: lectura del repositorio cuando hay acceso (VS Code), funcionalidades con IA generativa (BFF, streaming) y presentación segura del contenido generado, mapa de normativa UE, script `decision_matrix.py`. Prompts 25 a 28.
 
 ## Limitaciones
 - Validación estática: comprueba estructura y contenido, no la calidad de las respuestas.

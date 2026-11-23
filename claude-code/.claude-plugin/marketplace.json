@@ -1,0 +1,23 @@
+{
+  "name": "ai-tools",
+  "description": "Herramientas de IA para equipos de desarrollo",
+  "owner": { "name": "ai-tools" },
+  "plugins": [
+    {
+      "name": "angular",
+      "source": "./plugins/angular",
+      "description": "Agentes dev y arquitectura para Angular, política de calidad (SOLID, a11y, docs, tests) y hooks. Depende de angular-skills.",
+      "dependencies": ["angular-skills"]
+    },
+    {
+      "name": "angular-skills",
+      "description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/angular/angular.git",
+        "path": "skills/dev-skills/angular-developer",
+        "ref": "main"
+      }
+    }
+  ]
+}
