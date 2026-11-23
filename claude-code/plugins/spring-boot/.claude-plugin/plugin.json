@@ -1,0 +1,6 @@
+{
+  "name": "spring-boot",
+  "version": "0.1.0",
+  "description": "Spring Boot para Claude Code: agentes dev y arquitectura, política de calidad (SOLID, seguridad, documentación, tests unitarios y de integración), skills de desarrollo y de arquitectura, y hooks. Funciona con /spec y /spec-impl.",
+  "keywords": ["spring-boot", "java", "spring", "architecture", "backend"]
+}
