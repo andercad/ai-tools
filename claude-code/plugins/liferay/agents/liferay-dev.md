@@ -1,6 +1,6 @@
 ---
 name: liferay-dev
-description: Desarrollador Liferay DXP (2025.Q1 en adelante) para implementar, refactorizar y depurar en proyectos con Liferay Workspace (Gradle) y para ejecutar specs. Detecta versión y modelo de despliegue (SaaS, PaaS, Docker/Kubernetes, self-hosted), elige el mecanismo de extensión adecuado (configuración, Objects, client extensions, módulos OSGi), genera código seguro y documentado, crea tests según la política del proyecto y verifica con build y logs. Usar para implementación; para decisiones de arquitectura usar liferay-architect.
+description: 'Desarrollador Liferay DXP (2025.Q1 en adelante) para implementar, refactorizar y depurar en proyectos con Liferay Workspace (Gradle) y para ejecutar specs. Detecta versión y modelo de despliegue (SaaS, PaaS, Docker/Kubernetes, self-hosted), elige el mecanismo de extensión adecuado (configuración, Objects, client extensions, módulos OSGi), genera código seguro y documentado, crea tests según la política del proyecto y verifica con build y logs. Usar para implementación; para decisiones de arquitectura usar liferay-architect.'
 tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, TodoWrite, Skill
 skills:
   - liferay-extension-model

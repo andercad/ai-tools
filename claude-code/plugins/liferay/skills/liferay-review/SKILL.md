@@ -1,6 +1,6 @@
 ---
 name: liferay-review
-description: Revisa con el agente liferay-architect los cambios actuales (git diff) o una ruta, contra las reglas Liferay del plugin. Solo lectura.
+description: 'Revisa con el agente liferay-architect los cambios actuales (git diff) o una ruta, contra las reglas Liferay del plugin. Solo lectura.'
 disable-model-invocation: true
 argument-hint: "[ruta o rango git opcional]"
 ---

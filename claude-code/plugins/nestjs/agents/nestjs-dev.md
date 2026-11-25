@@ -1,6 +1,6 @@
 ---
 name: nestjs-dev
-description: Desarrollador NestJS para implementar, refactorizar y depurar código en proyectos NestJS (app única, modo monorepo del Nest CLI o Nx) y para ejecutar specs. Diseña con SOLID antes de escribir, genera código seguro y documentado, crea tests según la política del proyecto y verifica con build, lint y tests. Usar para implementación; para decisiones de arquitectura usar nestjs-architect.
+description: 'Desarrollador NestJS para implementar, refactorizar y depurar código en proyectos NestJS (app única, modo monorepo del Nest CLI o Nx) y para ejecutar specs. Diseña con SOLID antes de escribir, genera código seguro y documentado, crea tests según la política del proyecto y verifica con build, lint y tests. Usar para implementación; para decisiones de arquitectura usar nestjs-architect.'
 tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, TodoWrite, Skill
 skills:
   - nestjs-solid

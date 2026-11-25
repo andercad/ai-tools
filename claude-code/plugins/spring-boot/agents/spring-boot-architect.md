@@ -1,6 +1,6 @@
 ---
 name: spring-boot-architect
-description: Asesor de arquitectura Spring Boot (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades (Boot 3.x/4.x) y revisa cambios. Usar para decidir modularidad, API (REST/GraphQL), datos y transacciones, seguridad e identidad, runtime y cloud, observabilidad y resiliencia, y modernización. No implementa código.
+description: 'Asesor de arquitectura Spring Boot (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades (Boot 3.x/4.x) y revisa cambios. Usar para decidir modularidad, API (REST/GraphQL), datos y transacciones, seguridad e identidad, runtime y cloud, observabilidad y resiliencia, y modernización. No implementa código.'
 tools: Read, Grep, Glob, WebFetch, WebSearch
 ---
 

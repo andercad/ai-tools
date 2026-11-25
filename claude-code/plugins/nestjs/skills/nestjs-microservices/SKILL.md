@@ -1,6 +1,6 @@
 ---
 name: nestjs-microservices
-description: Microservicios y mensajería con NestJS (@nestjs/microservices). Usar al crear consumidores o productores, eventos, MessagePattern frente a EventPattern, ClientProxy, aplicaciones híbridas, transportes (RabbitMQ, Kafka, NATS, Redis, TCP, gRPC), idempotencia, acks, reintentos, DLQ, outbox, timeouts o graceful shutdown. No usar para decidir broker o dividir en microservicios a nivel arquitectura (skills nestjs-data-messaging y nestjs-modularity-domain).
+description: 'Microservicios y mensajería con NestJS (@nestjs/microservices). Usar al crear consumidores o productores, eventos, MessagePattern frente a EventPattern, ClientProxy, aplicaciones híbridas, transportes (RabbitMQ, Kafka, NATS, Redis, TCP, gRPC), idempotencia, acks, reintentos, DLQ, outbox, timeouts o graceful shutdown. No usar para decidir broker o dividir en microservicios a nivel arquitectura (skills nestjs-data-messaging y nestjs-modularity-domain).'
 ---
 
 # Microservicios y mensajería

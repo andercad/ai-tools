@@ -1,6 +1,6 @@
 ---
 name: nestjs-api
-description: Capa HTTP de NestJS. Usar al crear endpoints REST, controladores, rutas, códigos de estado, paginación, documentación OpenAPI/Swagger, DTOs de entrada y salida con class-validator, ValidationPipe, serialización, interceptores, pipes, middleware, filtros de excepciones y formato de error. No usar para GraphQL (nestjs-graphql), mensajería (nestjs-microservices) ni autenticación (nestjs-security).
+description: 'Capa HTTP de NestJS. Usar al crear endpoints REST, controladores, rutas, códigos de estado, paginación, documentación OpenAPI/Swagger, DTOs de entrada y salida con class-validator, ValidationPipe, serialización, interceptores, pipes, middleware, filtros de excepciones y formato de error. No usar para GraphQL (nestjs-graphql), mensajería (nestjs-microservices) ni autenticación (nestjs-security).'
 ---
 
 # API REST: controladores, DTOs, pipeline y errores

@@ -42,17 +42,18 @@ El portal está disponible en tres idiomas. **Añade siempre las traducciones en
 
 **Qué necesita**: la organización vigente de `src/app/` (o equivalente), con el propósito de cada carpeta de primer nivel. Sirve para que el agente sepa dónde ubicar cada nuevo artefacto (componente, servicio, guard, util...).
 
-**Ejemplo**:
+**Ejemplo** (por defecto del plugin, ver skill `angular-conventions`): `src/app/shared/` más una carpeta por funcionalidad. No hay `core/`; lo global va en la subcarpeta de `shared/`.
 
-| Carpeta         | Propósito                                                     |
-| --------------- | ------------------------------------------------------------- |
-| `components/`   | Componentes reutilizables organizados por dominio + `shared/` |
-| `pages/`        | Componentes raíz de cada ruta/página                          |
-| `services/`     | Servicios singleton con lógica de negocio y acceso a API      |
-| `models/`       | Tipos e interfaces TypeScript organizados por dominio         |
-| `guards/`       | Guards de ruta para control de acceso                         |
-| `interceptors/` | Interceptores HTTP                                            |
-| `utils/`        | Funciones puras y stateless organizadas por dominio           |
+| Carpeta                         | Propósito                                                         |
+| ------------------------------- | ----------------------------------------------------------------- |
+| `shared/`                       | Común y global: components, pipes, directives, services, models, guards, interceptors, utils |
+| `<funcionalidad>/`              | Una por funcionalidad (p. ej. `policies/`, `claims/`)             |
+| `<funcionalidad>/pages/`        | Componentes de ruta (cada uno con su `.html`)                     |
+| `<funcionalidad>/components/`    | Componentes reutilizables de la funcionalidad                     |
+| `<funcionalidad>/services/`     | Servicios con lógica de negocio y acceso a API                    |
+| `<funcionalidad>/models/`       | Tipos e interfaces                                                |
+| `<funcionalidad>/guards/` `interceptors/` `utils/` | Solo si la funcionalidad los necesita          |
+| `<funcionalidad>/<funcionalidad>.routes.ts` | Rutas de la funcionalidad                             |
 
 ---
 
@@ -66,22 +67,20 @@ Usa **siempre** los alias configurados. No uses imports relativos salvo dependen
 
 | Alias             | Ruta                     |
 | ----------------- | ------------------------ |
-| `@components/*`   | `src/app/components/*`   |
+| `@shared/*`       | `src/app/shared/*`       |
+| `@policies/*`     | `src/app/policies/*`     |
+| `@claims/*`       | `src/app/claims/*`       |
 | `@environments/*` | `src/environments/*`     |
-| `@models/*`       | `src/app/models/*`       |
-| `@services/*`     | `src/app/services/*`     |
-| `@utils/*`        | `src/app/utils/*`        |
 
-Cuando crees una nueva carpeta de primer nivel en `src/app/`, añade su alias en `tsconfig.json` antes de usarla.
+Un alias por funcionalidad y uno para `shared`. Cuando crees una carpeta de funcionalidad en `src/app/`, añade su alias en `tsconfig.json` antes de usarla.
 
 ```typescript
 // ✅ Correcto
-import { PolicyService } from '@services/policy';
-import { Policy } from '@models/policy';
+import { PolicyService } from '@policies/services/policy-service';
+import { Button } from '@shared/components/button/button';
 
 // ❌ Evitar
-import { PolicyService } from '../../services/policy';
-import { Policy } from '../../../models/policy';
+import { PolicyService } from '../../services/policy-service';
 ```
 
 ---
@@ -100,12 +99,12 @@ Las traducciones globales van en `public/i18n/<idioma>.json`. Las específicas d
 | `policies`  | Listado y detalle de pólizas |
 | `claims`    | Gestión de siniestros        |
 
-Los scopes se registran en los ficheros `*.routes.ts` con el helper `withTranslocoScope()` de `@utils/shared`. **No uses `provideTranslocoScope` directamente en rutas**:
+Los scopes se registran en los ficheros `*.routes.ts` con el helper `withTranslocoScope()` de `@shared/utils/...`. **No uses `provideTranslocoScope` directamente en rutas**:
 
 ```typescript
 withTranslocoScope(['dashboard'], {
   path: '',
-  loadComponent: () => import('@pages/dashboard/dashboard'),
+  loadComponent: () => import('@dashboard/pages/dashboard/dashboard'),
   title: 'dashboard-title',
 });
 

@@ -1,6 +1,6 @@
 ---
 name: nestjs-graphql
-description: GraphQL con NestJS (@nestjs/graphql). Usar al exponer datos con GraphQL, crear o modificar resolvers, tipos, inputs, mutations, subscriptions, configurar GraphQLModule (code-first o schema-first, Apollo o Mercurius), resolver N+1 con DataLoader, límites de profundidad y complejidad, paginación o autorización en GraphQL. No usar para REST (nestjs-api) ni para decidir REST frente a GraphQL (skill nestjs-api-integration).
+description: 'GraphQL con NestJS (@nestjs/graphql). Usar al exponer datos con GraphQL, crear o modificar resolvers, tipos, inputs, mutations, subscriptions, configurar GraphQLModule (code-first o schema-first, Apollo o Mercurius), resolver N+1 con DataLoader, límites de profundidad y complejidad, paginación o autorización en GraphQL. No usar para REST (nestjs-api) ni para decidir REST frente a GraphQL (skill nestjs-api-integration).'
 ---
 
 # GraphQL

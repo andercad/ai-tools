@@ -1,6 +1,6 @@
 ---
 name: liferay-extension-model
-description: Liferay DXP. Elección del mecanismo de extensión (configuración, Objects y contenido, client extensions, módulos OSGi, overrides del núcleo) y qué admite cada modelo de despliegue (SaaS, PaaS, self-hosted). Usar al decidir cómo implementar un requisito en Liferay, antes de crear un módulo, una entidad o una personalización, o al dudar si algo es posible en SaaS o PaaS. No usar para el diseño detallado de un mecanismo ya elegido (skills de cada tema).
+description: 'Liferay DXP. Elección del mecanismo de extensión (configuración, Objects y contenido, client extensions, módulos OSGi, overrides del núcleo) y qué admite cada modelo de despliegue (SaaS, PaaS, self-hosted). Usar al decidir cómo implementar un requisito en Liferay, antes de crear un módulo, una entidad o una personalización, o al dudar si algo es posible en SaaS o PaaS. No usar para el diseño detallado de un mecanismo ya elegido (skills de cada tema).'
 ---
 
 # Modelo de extensión de Liferay

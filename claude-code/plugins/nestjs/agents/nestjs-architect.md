@@ -1,6 +1,6 @@
 ---
 name: nestjs-architect
-description: Asesor de arquitectura NestJS (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades y revisa cambios. Usar para decidir modularidad, API (REST/GraphQL), datos y mensajería, seguridad e identidad, observabilidad, despliegue y modernización. No implementa código.
+description: 'Asesor de arquitectura NestJS (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades y revisa cambios. Usar para decidir modularidad, API (REST/GraphQL), datos y mensajería, seguridad e identidad, observabilidad, despliegue y modernización. No implementa código.'
 tools: Read, Grep, Glob, WebFetch, WebSearch
 ---
 

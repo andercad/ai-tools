@@ -1,5 +1,5 @@
 ---
-description: Crea un git worktree aislado en .trees/[nombre] y ejecuta ahí el requerimiento
+description: 'Crea un git worktree aislado en .trees/[nombre] y ejecuta ahí el requerimiento'
 argument-hint: <requerimiento a implementar>
 ---
 

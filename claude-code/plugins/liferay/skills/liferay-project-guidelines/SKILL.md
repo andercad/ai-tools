@@ -1,6 +1,6 @@
 ---
 name: liferay-project-guidelines
-description: Liferay DXP. Crea o actualiza en el CLAUDE.md del proyecto el bloque "Convenciones Liferay" (política de tests, docs, modelo de despliegue, versión, paquete base, formato, verify) y las reglas de implementación y de specs que aplican en cualquier flujo, incluido /spec y /spec-impl. Usar cuando el proyecto no tiene ese bloque, el usuario pide configurar los agentes Liferay para su proyecto o cambiar la política de calidad. No usar para implementar código.
+description: 'Liferay DXP. Crea o actualiza en el CLAUDE.md del proyecto el bloque "Convenciones Liferay" (política de tests, docs, modelo de despliegue, versión, paquete base, formato, verify) y las reglas de implementación y de specs que aplican en cualquier flujo, incluido /spec y /spec-impl. Usar cuando el proyecto no tiene ese bloque, el usuario pide configurar los agentes Liferay para su proyecto o cambiar la política de calidad. No usar para implementar código.'
 ---
 
 # Política del proyecto → `CLAUDE.md`

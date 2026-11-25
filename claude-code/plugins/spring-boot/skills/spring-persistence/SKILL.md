@@ -1,6 +1,6 @@
 ---
 name: spring-persistence
-description: Backend Spring Boot. Persistencia con Spring Data JPA. Usar al crear entidades, repositorios, consultas derivadas, JPQL o nativas, proyecciones, paginación, relaciones, problema N+1, bloqueos optimista y pesimista, auditoría, migraciones Flyway o Liquibase y ajuste de open-in-view y ddl-auto. No usar para lógica de transacciones de negocio (spring-structure-services) ni arquitectura de datos (spring-data-transactions).
+description: 'Backend Spring Boot. Persistencia con Spring Data JPA. Usar al crear entidades, repositorios, consultas derivadas, JPQL o nativas, proyecciones, paginación, relaciones, problema N+1, bloqueos optimista y pesimista, auditoría, migraciones Flyway o Liquibase y ajuste de open-in-view y ddl-auto. No usar para lógica de transacciones de negocio (spring-structure-services) ni arquitectura de datos (spring-data-transactions).'
 ---
 
 # Persistencia (Spring Data JPA)

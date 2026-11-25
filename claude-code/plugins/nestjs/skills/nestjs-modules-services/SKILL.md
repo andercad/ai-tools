@@ -1,6 +1,6 @@
 ---
 name: nestjs-modules-services
-description: Módulos, servicios y convenciones de código NestJS. Usar al crear o modificar un módulo de dominio, forRoot/forRootAsync/forFeature, imports/exports, dependencias circulares, servicios con lógica de negocio, mapeo entidad a DTO, transacciones de caso de uso, scopes de providers, o al decidir estructura de carpetas, naming, orden de miembros, barrels y alias. No usar para controladores o DTOs (nestjs-api) ni para elegir entre monolito modular y microservicios (agente nestjs-architect).
+description: 'Módulos, servicios y convenciones de código NestJS. Usar al crear o modificar un módulo de dominio, forRoot/forRootAsync/forFeature, imports/exports, dependencias circulares, servicios con lógica de negocio, mapeo entidad a DTO, transacciones de caso de uso, scopes de providers, o al decidir estructura de carpetas, naming, orden de miembros, barrels y alias. No usar para controladores o DTOs (nestjs-api) ni para elegir entre monolito modular y microservicios (agente nestjs-architect).'
 ---
 
 # Módulos, servicios y convenciones

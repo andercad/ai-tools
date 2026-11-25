@@ -1,6 +1,6 @@
 ---
 name: spring-security
-description: Backend Spring Boot. Seguridad de aplicación. Usar al implementar login, JWT, OAuth2 Resource Server, SecurityFilterChain, roles, @PreAuthorize, autorización por recurso, hash de contraseñas, CORS, CSRF, rate limiting, o al revisar vulnerabilidades como inyección, SSRF, deserialización, subida de ficheros, asignación masiva, Actuator expuesto, secretos y dependencias (OWASP Top 10). No usar para decisiones de arquitectura de identidad (spring-security-identity).
+description: 'Backend Spring Boot. Seguridad de aplicación. Usar al implementar login, JWT, OAuth2 Resource Server, SecurityFilterChain, roles, @PreAuthorize, autorización por recurso, hash de contraseñas, CORS, CSRF, rate limiting, o al revisar vulnerabilidades como inyección, SSRF, deserialización, subida de ficheros, asignación masiva, Actuator expuesto, secretos y dependencias (OWASP Top 10). No usar para decisiones de arquitectura de identidad (spring-security-identity).'
 ---
 
 # Autenticación, autorización y seguridad del código

@@ -1,6 +1,6 @@
 ---
 name: spring-integration
-description: Backend Spring Boot. Integración con otros sistemas. Usar al llamar a servicios HTTP con RestClient, WebClient o interfaces HTTP, configurar timeouts, reintentos y circuit breaker, y al publicar o consumir mensajes y eventos con Kafka, RabbitMQ o eventos de aplicación, idempotencia, DLQ y patrón outbox. No usar para GraphQL (spring-graphql) ni decisiones de arquitectura de integración (spring-api-integration).
+description: 'Backend Spring Boot. Integración con otros sistemas. Usar al llamar a servicios HTTP con RestClient, WebClient o interfaces HTTP, configurar timeouts, reintentos y circuit breaker, y al publicar o consumir mensajes y eventos con Kafka, RabbitMQ o eventos de aplicación, idempotencia, DLQ y patrón outbox. No usar para GraphQL (spring-graphql) ni decisiones de arquitectura de integración (spring-api-integration).'
 ---
 
 # Clientes HTTP y mensajería

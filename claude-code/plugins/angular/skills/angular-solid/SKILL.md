@@ -1,6 +1,6 @@
 ---
 name: angular-solid
-description: Diseño previo SOLID para código Angular nuevo o refactorizado. Usar antes de escribir componentes, servicios, directivas o pipes para decidir responsabilidades, dependencias y puntos de extensión. No usar para sintaxis o APIs de Angular (skill angular-developer) ni para decisiones de arquitectura de aplicación (agente angular-architect).
+description: 'Diseño previo SOLID para código Angular nuevo o refactorizado. Usar antes de escribir componentes, servicios, directivas o pipes para decidir responsabilidades, dependencias y puntos de extensión. No usar para sintaxis o APIs de Angular (skill angular-developer) ni para decisiones de arquitectura de aplicación (agente angular-architect).'
 ---
 
 # Diseño SOLID previo (antes de escribir)

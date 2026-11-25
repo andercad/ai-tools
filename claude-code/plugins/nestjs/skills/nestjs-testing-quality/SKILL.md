@@ -1,6 +1,6 @@
 ---
 name: nestjs-testing-quality
-description: Tests y calidad de código NestJS. Usar al escribir o corregir tests unitarios de servicios, guards y pipes, tests de controladores, e2e con supertest, base de datos real con Testcontainers, mocks tipados y cobertura (Jest o Vitest con @nestjs/testing), y al configurar ESLint, Prettier, SonarQube, logging (Logger/pino) o pasar el checklist pre-PR. No usar para estrategia de pruebas a nivel arquitectura (agente nestjs-architect).
+description: 'Tests y calidad de código NestJS. Usar al escribir o corregir tests unitarios de servicios, guards y pipes, tests de controladores, e2e con supertest, base de datos real con Testcontainers, mocks tipados y cobertura (Jest o Vitest con @nestjs/testing), y al configurar ESLint, Prettier, SonarQube, logging (Logger/pino) o pasar el checklist pre-PR. No usar para estrategia de pruebas a nivel arquitectura (agente nestjs-architect).'
 ---
 
 # Tests y calidad

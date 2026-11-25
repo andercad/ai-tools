@@ -246,17 +246,7 @@ Sigue el patrón correspondiente de WAI-ARIA Authoring Practices. Si existe un c
     '(keydown)': 'onKeydown($event)',
     '[attr.aria-activedescendant]': 'activeId()',
   },
-  template: `
-    @for (item of items(); track item.id; let i = $index) {
-      <div
-        role="option"
-        [id]="'item-' + item.id"
-        [attr.aria-selected]="i === activeIndex()"
-      >
-        {{ item.name }}
-      </div>
-    }
-  `,
+  templateUrl: './selectable-list.html', // ver el .html tras la clase
 })
 export class SelectableListComponent {
   // ========== Inputs ==========
@@ -302,6 +292,19 @@ export class SelectableListComponent {
         break;
     }
   }
+}
+```
+
+```html
+<!-- selectable-list.html -->
+@for (item of items(); track item.id; let i = $index) {
+  <div
+    role="option"
+    [id]="'item-' + item.id"
+    [attr.aria-selected]="i === activeIndex()"
+  >
+    {{ item.name }}
+  </div>
 }
 ```
 

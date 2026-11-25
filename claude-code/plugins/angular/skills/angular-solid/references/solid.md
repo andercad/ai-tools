@@ -85,41 +85,49 @@ Si la lógica es pura y sin dependencias, una **función exportada** en `utils/`
 // ❌ Componente que hay que modificar para añadir variantes
 @Component({
   // ...resto de metadatos
-  template: `
-    @if (type() === 'primary') {
-      <button type="button" class="btn btn-primary">...</button>
-    } @else if (type() === 'danger') {
-      <button type="button" class="btn btn-danger">...</button>
-    } @else if (type() === 'outline') {
-      <!-- ← modificar para añadir -->
-      <button type="button" class="btn btn-outline-secondary">...</button>
-    }
-  `,
+  templateUrl: './action-button.html',
 })
 export class ActionButtonComponent {
   readonly type = input<'primary' | 'danger' | 'outline'>('primary');
 }
+```
 
+```html
+<!-- action-button.html -->
+@if (type() === 'primary') {
+  <button type="button" class="btn btn-primary">...</button>
+} @else if (type() === 'danger') {
+  <button type="button" class="btn btn-danger">...</button>
+} @else if (type() === 'outline') {
+  <!-- ← modificar para añadir -->
+  <button type="button" class="btn btn-outline-secondary">...</button>
+}
+```
+
+```typescript
 // ✅ Extensible mediante inputs, sin modificar el componente base
 @Component({
   selector: 'app-action-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <button
-      type="button"
-      class="btn"
-      [class]="'btn btn-' + variant()"
-      [class.btn-sm]="size() === 'sm'"
-      [class.btn-lg]="size() === 'lg'"
-    >
-      <ng-content />
-    </button>
-  `,
+  templateUrl: './action-button.html',
 })
 export class ActionButtonComponent {
   readonly variant = input<ButtonVariant>('primary'); // unión de variantes del framework CSS
   readonly size = input<'sm' | 'md' | 'lg'>('md');
 }
+```
+
+```html
+<!-- action-button.html -->
+<button
+  type="button"
+  class="btn"
+  [class]="'btn btn-' + variant()"
+  [class.btn-sm]="size() === 'sm'"
+  [class.btn-lg]="size() === 'lg'"
+>
+  <ng-content />
+</button>
 ```
 
 Tipa las variantes con una unión (`ButtonVariant`) en lugar de `string` para no perder comprobación de tipos.

@@ -1,6 +1,6 @@
 ---
 name: spring-api
-description: Backend Spring Boot. Capa HTTP REST. Usar al crear endpoints, controladores, rutas, códigos de estado, paginación, OpenAPI con springdoc, DTOs y records con Bean Validation y Jackson, @Valid, @RestControllerAdvice, ProblemDetail, filtros, interceptores, AOP y ResponseBodyAdvice. No usar para GraphQL (spring-graphql), mensajería (spring-integration) ni autenticación (spring-security).
+description: 'Backend Spring Boot. Capa HTTP REST. Usar al crear endpoints, controladores, rutas, códigos de estado, paginación, OpenAPI con springdoc, DTOs y records con Bean Validation y Jackson, @Valid, @RestControllerAdvice, ProblemDetail, filtros, interceptores, AOP y ResponseBodyAdvice. No usar para GraphQL (spring-graphql), mensajería (spring-integration) ni autenticación (spring-security).'
 ---
 
 # API REST: controladores, DTOs, errores y pipeline

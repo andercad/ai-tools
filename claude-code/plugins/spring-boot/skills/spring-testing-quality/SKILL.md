@@ -1,6 +1,6 @@
 ---
 name: spring-testing-quality
-description: Backend Spring Boot. Tests y calidad. Usar al crear o corregir tests con JUnit 5, AssertJ y Mockito, slices (@WebMvcTest, @DataJpaTest), @SpringBootTest, Testcontainers con @ServiceConnection, @MockitoBean, MockMvc, tests de seguridad y cobertura JaCoCo, y al aplicar formato, análisis estático, SonarQube y logging con SLF4J. No usar para diseño de clases (spring-solid).
+description: 'Backend Spring Boot. Tests y calidad. Usar al crear o corregir tests con JUnit 5, AssertJ y Mockito, slices (@WebMvcTest, @DataJpaTest), @SpringBootTest, Testcontainers con @ServiceConnection, @MockitoBean, MockMvc, tests de seguridad y cobertura JaCoCo, y al aplicar formato, análisis estático, SonarQube y logging con SLF4J. No usar para diseño de clases (spring-solid).'
 ---
 
 # Tests y calidad

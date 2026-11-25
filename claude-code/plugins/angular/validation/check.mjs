@@ -85,7 +85,7 @@ for (const f of readdirSync(agentsDir)) {
 const hooks = JSON.parse(readFileSync(path.join(root, "hooks", "hooks.json"), "utf8"));
 check(hooks.hooks && hooks.hooks.PostToolUse, "hooks.json: falta wrapper hooks/PostToolUse");
 check(hooks.hooks && hooks.hooks.Stop, "hooks.json: falta hook Stop");
-for (const s of ["format-lint.mjs", "check-specs.mjs"]) {
+for (const s of ["format-lint.mjs", "check-specs.mjs", "check-templates.mjs"]) {
   check(existsSync(path.join(root, "scripts", s)), `falta scripts/${s}`);
 }
 

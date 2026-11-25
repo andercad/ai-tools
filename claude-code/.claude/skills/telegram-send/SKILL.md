@@ -1,6 +1,6 @@
 ---
 name: telegram-send
-description: Envía un mensaje de texto a Telegram (Bot API sendMessage) usando TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID de .claude/settings.local.json.
+description: 'Envía un mensaje de texto a Telegram (Bot API sendMessage) usando TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID de .claude/settings.local.json.'
 disable-model-invocation: true
 argument-hint: <mensaje>
 allowed-tools: Bash(node *)

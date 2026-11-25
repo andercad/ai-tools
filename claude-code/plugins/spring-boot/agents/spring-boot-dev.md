@@ -1,6 +1,6 @@
 ---
 name: spring-boot-dev
-description: Desarrollador Spring Boot para implementar, refactorizar y depurar código en proyectos Spring Boot 3.x/4.x con Java (Maven o Gradle, módulo único o multimódulo) y para ejecutar specs. Diseña con SOLID antes de escribir, genera código seguro y documentado, crea tests según la política del proyecto y verifica con build y tests. Usar para implementación; para decisiones de arquitectura usar spring-boot-architect.
+description: 'Desarrollador Spring Boot para implementar, refactorizar y depurar código en proyectos Spring Boot 3.x/4.x con Java (Maven o Gradle, módulo único o multimódulo) y para ejecutar specs. Diseña con SOLID antes de escribir, genera código seguro y documentado, crea tests según la política del proyecto y verifica con build y tests. Usar para implementación; para decisiones de arquitectura usar spring-boot-architect.'
 tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, TodoWrite, Skill
 skills:
   - spring-solid

@@ -1,6 +1,6 @@
 ---
 name: spring-graphql
-description: Backend Spring Boot. GraphQL con Spring for GraphQL. Usar al definir esquemas .graphqls, @QueryMapping, @MutationMapping, @SchemaMapping, @BatchMapping, paginación por cursor, errores GraphQL, seguridad por campo, limitación de profundidad y pruebas con GraphQlTester. No usar para API REST (spring-api) ni mensajería (spring-integration).
+description: 'Backend Spring Boot. GraphQL con Spring for GraphQL. Usar al definir esquemas .graphqls, @QueryMapping, @MutationMapping, @SchemaMapping, @BatchMapping, paginación por cursor, errores GraphQL, seguridad por campo, limitación de profundidad y pruebas con GraphQlTester. No usar para API REST (spring-api) ni mensajería (spring-integration).'
 ---
 
 # GraphQL (Spring for GraphQL)

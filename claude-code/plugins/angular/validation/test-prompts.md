@@ -22,4 +22,10 @@ Instala el plugin y lanza cada prompt en sesión limpia. Marca el resultado.
 | 16 | Con `docs: jsdoc`: crea un componente con inputs/outputs | JSDoc en clase, inputs/outputs y métodos públicos, sin comentarios triviales | |
 | 17 | `/spec` para una feature y luego `/spec-impl` (instalados aparte) | la spec incluye diseño de clases, criterios a11y y plan de tests; la implementación aplica SOLID previo, crea specs en el mismo paso y ejecuta `verify` | |
 
+| 18 | Crea una página de listado de pedidos | `orders/pages/...` con `.html`, ruta en `orders.routes.ts`, alias `@orders/*` creado en `tsconfig`; imports por alias | |
+| 19 | Crea un componente reutilizable de tarjeta | en `components/` con `.html`, JSDoc con `@example`, separadores en orden canónico | |
+| 20 | Simular un `@Component` con `template:` inline y cerrar | el hook Stop bloquea y pide `templateUrl`; con `templates: inline` en el CLAUDE.md no bloquea | |
+| 21 | Crea un interceptor HTTP global | va en `shared/interceptors`, no en `core/` | |
+| 22 | Repo con `components/` y `services/` en la raíz de `src/app` | pregunta si se mantiene la estructura; no migra código existente | |
+
 Criterios transversales: informa qué verificó y qué no; no usa APIs experimentales sin avisar; `angular-architect` nunca edita ficheros.

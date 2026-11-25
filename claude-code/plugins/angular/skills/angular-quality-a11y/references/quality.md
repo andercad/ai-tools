@@ -165,8 +165,8 @@ const formatted = value.trim().toLowerCase().replace(/\s+/g, '-');
 // ComponenteB.ts
 const formatted = value.trim().toLowerCase().replace(/\s+/g, '-');
 
-// ✅ Extraer a utils/shared
-// utils/shared/string-utils.ts
+// ✅ Extraer a shared/utils (alias @shared/utils/...)
+// shared/utils/string-utils.ts
 export function toKebabCase(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, '-');
 }

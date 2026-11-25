@@ -17,10 +17,9 @@ Definir una estructura proporcional al tamaño del producto y del equipo, con l�
 Los microfrontends son una decisión organizativa, no técnica: exige drivers y compara siempre con la aplicación única por features.
 
 ## Estructura por features
-- `core` o app shell: configuración, layout, interceptores, providers globales.
-- `features/<feature>`: rutas lazy, páginas, componentes, acceso a datos y estado de la feature.
-- `shared/ui`: componentes presentacionales sin dependencias de dominio.
-- `shared/util`: utilidades puras.
+- `src/app/<funcionalidad>/`: una carpeta por funcionalidad con su `<funcionalidad>.routes.ts` (lazy), `pages/` (componentes de ruta), `components/`, `services/`, `models/`, etc.
+- `src/app/shared/`: lo común y lo global (layout, interceptores, guards, servicios, componentes presentacionales sin dependencias de dominio, pipes, utils) en su subcarpeta; sin carpeta `core/`.
+- Un alias de `tsconfig` por funcionalidad y uno para `shared` (`@<funcionalidad>/*`, `@shared/*`). Detalle en la skill `angular-conventions`.
 Dependencias permitidas: feature → shared; feature ↛ otra feature salvo por su API pública; shared ↛ feature. Verifica los límites en CI como fitness function (reglas de límites de Nx, `eslint-plugin-boundaries`, dependency-cruiser). Standalone es el modelo por defecto en versiones recientes; NgModules solo en legado (ver `angular-modernization-governance`).
 
 ## Modelo de componentes
@@ -51,7 +50,7 @@ Decide entre librería propia, Angular Material/CDK o terceros según requisitos
 - Capas DDD o Clean Architecture vacías sobre un CRUD.
 - Microfrontends para un único equipo o como sustituto de modularidad.
 - Modelos de backend duplicados a mano sin contrato.
-- Estructura por tipo técnico (`components/`, `services/`) en aplicaciones medianas o grandes.
+- Estructura por tipo técnico (`components/`, `services/`) en la raíz de aplicaciones medianas o grandes; solo es válida dentro de cada funcionalidad o de `shared/`.
 
 ## Salida
 Antes de recomendar monorepo o microfrontends, puntúa `reference/microfrontends-readiness.md`.

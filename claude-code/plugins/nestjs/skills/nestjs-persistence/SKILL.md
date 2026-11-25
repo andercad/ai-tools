@@ -1,6 +1,6 @@
 ---
 name: nestjs-persistence
-description: Persistencia en NestJS con TypeORM o Prisma. Usar al añadir o cambiar tablas, entidades, relaciones, repositorios, consultas, índices, migraciones, transacciones, concurrencia o al resolver consultas lentas y N+1. No usar para elegir ORM o SQL frente a NoSQL a nivel arquitectura (skill nestjs-data-messaging).
+description: 'Persistencia en NestJS con TypeORM o Prisma. Usar al añadir o cambiar tablas, entidades, relaciones, repositorios, consultas, índices, migraciones, transacciones, concurrencia o al resolver consultas lentas y N+1. No usar para elegir ORM o SQL frente a NoSQL a nivel arquitectura (skill nestjs-data-messaging).'
 ---
 
 # Persistencia

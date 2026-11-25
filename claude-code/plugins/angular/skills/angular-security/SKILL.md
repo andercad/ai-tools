@@ -1,6 +1,6 @@
 ---
 name: angular-security
-description: Seguridad Angular a nivel de código. Usar al implementar login/logout o sesión, decidir dónde guardar tokens, manejar PII o datos sensibles, renderizar HTML dinámico (sanitización, XSS, bypassSecurityTrust), validar entradas, CSRF o auditar dependencias antes de instalarlas. No usar para elegir BFF/OAuth a nivel arquitectura (agente angular-architect).
+description: 'Seguridad Angular a nivel de código. Usar al implementar login/logout o sesión, decidir dónde guardar tokens, manejar PII o datos sensibles, renderizar HTML dinámico (sanitización, XSS, bypassSecurityTrust), validar entradas, CSRF o auditar dependencias antes de instalarlas. No usar para elegir BFF/OAuth a nivel arquitectura (agente angular-architect).'
 ---
 
 # Seguridad del frontend

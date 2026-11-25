@@ -1,6 +1,6 @@
 ---
 name: nestjs-review
-description: Revisa con el agente nestjs-architect los cambios actuales (git diff) o una ruta, contra las reglas NestJS del plugin. Solo lectura.
+description: 'Revisa con el agente nestjs-architect los cambios actuales (git diff) o una ruta, contra las reglas NestJS del plugin. Solo lectura.'
 disable-model-invocation: true
 argument-hint: "[ruta o rango git opcional]"
 ---

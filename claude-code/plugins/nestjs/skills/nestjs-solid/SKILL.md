@@ -1,6 +1,6 @@
 ---
 name: nestjs-solid
-description: Diseño previo SOLID para código NestJS nuevo o refactorizado. Usar antes de escribir módulos, servicios, guards, interceptores o proveedores para decidir responsabilidades, dependencias, tokens de inyección y puntos de extensión. No usar para sintaxis de decoradores de Nest ni para decisiones de arquitectura de aplicación (agente nestjs-architect).
+description: 'Diseño previo SOLID para código NestJS nuevo o refactorizado. Usar antes de escribir módulos, servicios, guards, interceptores o proveedores para decidir responsabilidades, dependencias, tokens de inyección y puntos de extensión. No usar para sintaxis de decoradores de Nest ni para decisiones de arquitectura de aplicación (agente nestjs-architect).'
 ---
 
 # Diseño SOLID previo (antes de escribir)

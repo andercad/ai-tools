@@ -1,6 +1,6 @@
 ---
 name: NestJS Architect
-description: Arquitecto NestJS genérico para NestJS v11+ con TypeScript estricto, arquitectura modular y buenas prácticas de API REST/GraphQL y microservicios. Funciona en proyectos de una aplicación y en monorepos (modo monorepo del Nest CLI o Nx). Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.
+description: 'Arquitecto NestJS genérico para NestJS v11+ con TypeScript estricto, arquitectura modular y buenas prácticas de API REST/GraphQL y microservicios. Funciona en proyectos de una aplicación y en monorepos (modo monorepo del Nest CLI o Nx). Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.'
 argument-hint: Describe la funcionalidad, módulo, endpoint o decisión arquitectónica que necesitas resolver.
 model: Claude Sonnet 4.6 (copilot)
 tools: [vscode, execute, read, agent, edit, search, web, browser, todo]

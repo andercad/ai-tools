@@ -1,6 +1,6 @@
 ---
 name: angular-workspace
-description: Estructura de workspace Angular. Usar en monorepos (Angular CLI multiproyecto o Nx), al crear o publicar librerías con ng-packagr, o al gestionar variables de entorno, librerías de terceros y actualizaciones de versión (ng update, nx migrate). No usar para decidir si adoptar monorepo o microfrontends (agente angular-architect) ni para planificar upgrades de versión mayor (angular-modernization-governance).
+description: 'Estructura de workspace Angular. Usar en monorepos (Angular CLI multiproyecto o Nx), al crear o publicar librerías con ng-packagr, o al gestionar variables de entorno, librerías de terceros y actualizaciones de versión (ng update, nx migrate). No usar para decidir si adoptar monorepo o microfrontends (agente angular-architect) ni para planificar upgrades de versión mayor (angular-modernization-governance).'
 ---
 
 # Workspace, librerías y entorno

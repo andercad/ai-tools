@@ -1,6 +1,6 @@
 ---
 name: nestjs-security
-description: Seguridad NestJS a nivel de código. Usar al implementar login, registro, JWT, Passport, refresh tokens, guards de autenticación o roles, @Public(), permisos, autorización por recurso, y al revisar o endurecer código frente a OWASP: inyección, SSRF, path traversal, asignación masiva, subida de ficheros, helmet, CORS, CSRF, rate limiting, secretos, criptografía y dependencias. No usar para diseñar identidad (OAuth/OIDC, multi-tenant) ni normativa UE (skill nestjs-security-identity).
+description: 'Seguridad NestJS a nivel de código. Usar al implementar login, registro, JWT, Passport, refresh tokens, guards de autenticación o roles, @Public(), permisos, autorización por recurso, y al revisar o endurecer código frente a OWASP: inyección, SSRF, path traversal, asignación masiva, subida de ficheros, helmet, CORS, CSRF, rate limiting, secretos, criptografía y dependencias. No usar para diseñar identidad (OAuth/OIDC, multi-tenant) ni normativa UE (skill nestjs-security-identity).'
 ---
 
 # Seguridad del backend

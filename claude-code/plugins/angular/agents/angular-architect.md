@@ -1,6 +1,6 @@
 ---
 name: angular-architect
-description: Asesor de arquitectura Angular (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades y revisa cambios. Usar para decidir estructura, estado, renderizado, integración con backend o Liferay, calidad y modernización. No implementa código.
+description: 'Asesor de arquitectura Angular (solo lectura). Evalúa aplicaciones existentes, compara alternativas, redacta ADR, matrices de decisión y registros de riesgo, planifica upgrades y revisa cambios. Usar para decidir estructura, estado, renderizado, integración con backend o Liferay, calidad y modernización. No implementa código.'
 tools: Read, Grep, Glob, WebFetch, WebSearch
 ---
 

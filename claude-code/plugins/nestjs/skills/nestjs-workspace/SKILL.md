@@ -1,6 +1,6 @@
 ---
 name: nestjs-workspace
-description: Workspace y configuración NestJS. Usar en monorepos (modo monorepo del Nest CLI o Nx con @nx/nest) al crear apps o librerías, compartir módulos, importar entre proyectos, límites y etiquetas, ejecutar build/test/lint por proyecto o lo afectado, CI y contratos con un frontend; y al añadir variables de entorno, validar configuración, usar ConfigService, registerAs o gestionar secretos. No usar para decidir si adoptar monorepo o microservicios (agente nestjs-architect).
+description: 'Workspace y configuración NestJS. Usar en monorepos (modo monorepo del Nest CLI o Nx con @nx/nest) al crear apps o librerías, compartir módulos, importar entre proyectos, límites y etiquetas, ejecutar build/test/lint por proyecto o lo afectado, CI y contratos con un frontend; y al añadir variables de entorno, validar configuración, usar ConfigService, registerAs o gestionar secretos. No usar para decidir si adoptar monorepo o microservicios (agente nestjs-architect).'
 ---
 
 # Workspace y configuración

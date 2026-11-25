@@ -1,6 +1,6 @@
 ---
 name: Angular Architect
-description: Arquitecto Angular genérico para Angular v21+ con señales, componentes standalone y zoneless. Funciona en proyectos de una aplicación y en monorepos (workspace multiproyecto de Angular CLI o Nx). Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.
+description: 'Arquitecto Angular genérico para Angular v21+ con señales, componentes standalone y zoneless. Funciona en proyectos de una aplicación y en monorepos (workspace multiproyecto de Angular CLI o Nx). Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.'
 argument-hint: Describe la funcionalidad, componente o decisión arquitectónica que necesitas resolver.
 model: Claude Sonnet 4.6 (copilot)
 tools: [vscode, execute, read, agent, edit, search, web, 'angular-cli/*', browser, todo]

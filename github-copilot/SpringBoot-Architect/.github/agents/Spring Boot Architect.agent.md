@@ -1,6 +1,6 @@
 ---
 name: Spring Boot Architect
-description: Arquitecto Spring Boot genérico para Spring Boot 3.x/4.x con Java moderno, arquitectura por funcionalidad y buenas prácticas de API REST/GraphQL, persistencia, seguridad y mensajería. Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.
+description: 'Arquitecto Spring Boot genérico para Spring Boot 3.x/4.x con Java moderno, arquitectura por funcionalidad y buenas prácticas de API REST/GraphQL, persistencia, seguridad y mensajería. Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.'
 argument-hint: Describe la funcionalidad, endpoint, entidad o decisión arquitectónica que necesitas resolver.
 model: Claude Sonnet 4.6 (copilot)
 tools: [vscode, execute, read, agent, edit, search, web, browser, todo]

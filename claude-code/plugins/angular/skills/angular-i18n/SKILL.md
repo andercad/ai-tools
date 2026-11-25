@@ -1,6 +1,6 @@
 ---
 name: angular-i18n
-description: Internacionalización con Transloco en Angular. Usar al añadir texto visible, crear componentes con cadenas, gestionar scopes de traducción, títulos de página o sincronizar ficheros de idioma, cuando el proyecto use Transloco o se defina i18n en su CLAUDE.md. No usar si el proyecto es monolingüe ni para elegir estrategia de i18n a nivel arquitectura (agente angular-architect).
+description: 'Internacionalización con Transloco en Angular. Usar al añadir texto visible, crear componentes con cadenas, gestionar scopes de traducción, títulos de página o sincronizar ficheros de idioma, cuando el proyecto use Transloco o se defina i18n en su CLAUDE.md. No usar si el proyecto es monolingüe ni para elegir estrategia de i18n a nivel arquitectura (agente angular-architect).'
 ---
 
 # i18n con Transloco

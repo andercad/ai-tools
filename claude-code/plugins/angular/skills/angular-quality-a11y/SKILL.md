@@ -1,6 +1,6 @@
 ---
 name: angular-quality-a11y
-description: Accesibilidad (WCAG-2.2-AA como base, o el nivel del proyecto) y calidad de código en Angular. Usar siempre antes de escribir plantillas o componentes con UI, al configurar ESLint/Prettier/SonarQube o reducir complejidad. No usar para sintaxis o testing con TestBed (skill angular-developer) ni para estrategia de pruebas a nivel arquitectura (agente angular-architect).
+description: 'Accesibilidad (WCAG-2.2-AA como base, o el nivel del proyecto) y calidad de código en Angular. Usar siempre antes de escribir plantillas o componentes con UI, al configurar ESLint/Prettier/SonarQube o reducir complejidad. No usar para sintaxis o testing con TestBed (skill angular-developer) ni para estrategia de pruebas a nivel arquitectura (agente angular-architect).'
 ---
 
 # Accesibilidad desde el diseño y calidad

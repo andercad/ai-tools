@@ -1,6 +1,6 @@
 ---
 name: Liferay Architect
-description: Arquitecto de Liferay DXP (2025.Q1 en adelante) para proyectos con Liferay Workspace (Gradle). Detecta la versión y el modelo de despliegue del proyecto (self-hosted clásico, Docker/Kubernetes, PaaS o SaaS) y elige el mecanismo de extensión adecuado - configuración, Objects, contenido, client extensions o módulos OSGi. Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.
+description: 'Arquitecto de Liferay DXP (2025.Q1 en adelante) para proyectos con Liferay Workspace (Gradle). Detecta la versión y el modelo de despliegue del proyecto (self-hosted clásico, Docker/Kubernetes, PaaS o SaaS) y elige el mecanismo de extensión adecuado - configuración, Objects, contenido, client extensions o módulos OSGi. Adaptable a cualquier proyecto mediante guidelines/coding-guidelines.md.'
 argument-hint: Describe la funcionalidad, integración, incidencia o decisión de arquitectura de Liferay que necesitas resolver.
 model: Claude Sonnet 4.6 (copilot)
 tools: [vscode, execute, read, agent, edit, search, web, browser, todo]

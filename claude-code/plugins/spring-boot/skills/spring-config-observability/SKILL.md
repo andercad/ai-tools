@@ -1,6 +1,6 @@
 ---
 name: spring-config-observability
-description: Backend Spring Boot. Configuración y operación. Usar al definir @ConfigurationProperties, perfiles, application.yml, secretos, variables de entorno, o al configurar Actuator, health checks, probes, métricas Micrometer, trazas, logs estructurados, apagado ordenado, hilos virtuales y ajuste en contenedor. No usar para decisiones de runtime y despliegue (spring-cloud-runtime) ni resiliencia arquitectónica (spring-observability-resilience).
+description: 'Backend Spring Boot. Configuración y operación. Usar al definir @ConfigurationProperties, perfiles, application.yml, secretos, variables de entorno, o al configurar Actuator, health checks, probes, métricas Micrometer, trazas, logs estructurados, apagado ordenado, hilos virtuales y ajuste en contenedor. No usar para decisiones de runtime y despliegue (spring-cloud-runtime) ni resiliencia arquitectónica (spring-observability-resilience).'
 ---
 
 # Configuración y observabilidad

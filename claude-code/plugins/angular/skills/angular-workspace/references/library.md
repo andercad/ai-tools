@@ -79,19 +79,8 @@ export type BadgeTone = 'neutral' | 'success' | 'warning' | 'danger';
     '[class.acme-badge--warning]': "tone() === 'warning'",
     '[class.acme-badge--danger]': "tone() === 'danger'",
   },
-  template: `<ng-content />`,
-  styles: `
-    :host {
-      display: inline-block;
-      padding: var(--acme-badge-padding, 0.125rem 0.5rem);
-      border-radius: var(--acme-badge-radius, 999px);
-      background: var(--acme-badge-bg, #e9ecef);
-      color: var(--acme-badge-color, #212529);
-    }
-    :host(.acme-badge--success) { --acme-badge-bg: var(--acme-color-success, #198754); --acme-badge-color: #fff; }
-    :host(.acme-badge--warning) { --acme-badge-bg: var(--acme-color-warning, #ffc107); }
-    :host(.acme-badge--danger) { --acme-badge-bg: var(--acme-color-danger, #dc3545); --acme-badge-color: #fff; }
-  `,
+  templateUrl: './badge.html', // contenido: <ng-content />
+  styleUrl: './badge.css', // :host { display: inline-block; padding: var(--acme-badge-padding, 0.125rem 0.5rem); ... }
 })
 export class AcmeBadge {
   readonly tone = input<BadgeTone>('neutral');

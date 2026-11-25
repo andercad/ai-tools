@@ -1,6 +1,6 @@
 ---
 name: spring-solid
-description: Backend Spring Boot. Principios SOLID en Spring. Usar al diseñar o refactorizar servicios, decidir si crear una interfaz, desacoplar una implementación (persistencia, proveedor externo, mensajería), elegir entre varias implementaciones con @Qualifier o @Primary o inyectar List/Map de beans como estrategias. No usar para estructura de paquetes (spring-structure-services).
+description: 'Backend Spring Boot. Principios SOLID en Spring. Usar al diseñar o refactorizar servicios, decidir si crear una interfaz, desacoplar una implementación (persistencia, proveedor externo, mensajería), elegir entre varias implementaciones con @Qualifier o @Primary o inyectar List/Map de beans como estrategias. No usar para estructura de paquetes (spring-structure-services).'
 ---
 
 # SOLID en Spring
