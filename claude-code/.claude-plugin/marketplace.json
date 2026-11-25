@@ -1,38 +1,38 @@
 {
-  "name": "ai-tools",
-  "description": "Herramientas de IA para equipos de desarrollo",
-  "owner": { "name": "ai-tools" },
-  "plugins": [
-    {
-      "name": "angular",
-      "source": "./plugins/angular",
-      "description": "Agentes dev y arquitectura para Angular, política de calidad (SOLID, a11y, docs, tests) y hooks. Depende de angular-skills.",
-      "dependencies": ["angular-skills"]
-    },
-    {
-      "name": "nestjs",
-      "source": "./plugins/nestjs",
-      "description": "Agentes dev y arquitectura para NestJS, política de calidad (SOLID, seguridad, docs, tests unitarios y e2e) y hooks. Sin dependencias externas."
-    },
-    {
-      "name": "spring-boot",
-      "source": "./plugins/spring-boot",
-      "description": "Agentes dev y arquitectura para Spring Boot 3.x/4.x, política de calidad (SOLID, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
-    },
-    {
-      "name": "liferay",
-      "source": "./plugins/liferay",
-      "description": "Agentes dev y arquitectura para Liferay DXP 2025.Q1+, política de calidad (permisos, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
-    },
-    {
-      "name": "angular-skills",
-      "description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/angular/angular.git",
-        "path": "skills/dev-skills/angular-developer",
-        "ref": "main"
-      }
-    }
-  ]
+	"name": "ai-tools",
+	"description": "Herramientas de IA para equipos de desarrollo",
+	"owner": { "name": "andercad" },
+	"plugins": [
+		{
+			"name": "angular",
+			"source": "./plugins/angular",
+			"description": "Agentes dev y arquitectura para Angular, política de calidad (SOLID, a11y, docs, tests) y hooks. Depende de angular-skills.",
+			"dependencies": ["angular-skills"]
+		},
+		{
+			"name": "nestjs",
+			"source": "./plugins/nestjs",
+			"description": "Agentes dev y arquitectura para NestJS, política de calidad (SOLID, seguridad, docs, tests unitarios y e2e) y hooks. Sin dependencias externas."
+		},
+		{
+			"name": "spring-boot",
+			"source": "./plugins/spring-boot",
+			"description": "Agentes dev y arquitectura para Spring Boot 3.x/4.x, política de calidad (SOLID, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
+		},
+		{
+			"name": "liferay",
+			"source": "./plugins/liferay",
+			"description": "Agentes dev y arquitectura para Liferay DXP 2025.Q1+, política de calidad (permisos, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
+		},
+		{
+			"name": "angular-skills",
+			"description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
+			"source": {
+				"source": "git-subdir",
+				"url": "https://github.com/angular/angular.git",
+				"path": "skills/dev-skills/angular-developer",
+				"ref": "main"
+			}
+		}
+	]
 }
