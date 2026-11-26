@@ -22,7 +22,8 @@ Límite del MCP: `lighthouse_audit` cubre accesibilidad, SEO y buenas prácticas
 
 1. **Solo lectura.**
    - Write/Edit únicamente sobre `references/lighthouse/lighthouse-audit.md` (única escritura permitida en `references/`).
-   - Los informes completos de Lighthouse van a `.lighthouse-reports/<AAAA-MM-DD>/<app>-<ruta>-<device>/` con `outputDirPath`. Si `.lighthouse-reports/` no está en `.gitignore`, avísalo en la salida (no lo edites).
+   - Fecha y hora de lanzamiento: al empezar, obtenla con `date +%Y-%m-%d_%H%M` (Bash) y úsala en todo el informe y la memoria (formato `AAAA-MM-DD HH:MM`; en nombres de carpeta, `AAAA-MM-DD_HHMM`), para distinguir lanzamientos del mismo día.
+   - Los informes completos de Lighthouse van a `.lighthouse-reports/<AAAA-MM-DD_HHMM>/<app>-<ruta>-<device>/` con `outputDirPath`. Si `.lighthouse-reports/` no está en `.gitignore`, avísalo en la salida (no lo edites).
    - Bash: solo `curl -I` de disponibilidad y el aviso por Telegram (regla 11). No arranques servidores ni instales nada: si una app no responde, marca sus checks como "no verificado" y avisa. Sin commits ni ramas.
    - Con varias apps, si solo responde una, audita esa y marca las demás como "no verificado".
 
@@ -59,13 +60,13 @@ Límite del MCP: `lighthouse_audit` cubre accesibilidad, SEO y buenas prácticas
 
 9. **Privacidad:** ni cookies, ni tokens, ni emails, ni datos de usuarios reales en el informe ni en la memoria. Si una ruta exige login, no uses credenciales reales: márcala "no verificado (requiere sesión)" salvo que el usuario facilite una cuenta de pruebas.
 
-10. **Actualiza la memoria** `references/lighthouse/lighthouse-audit.md` al terminar: una fila por app × ruta × device, la tabla de paridad si procede, una fila nueva en el historial, los hallazgos abiertos y la fecha. Crea la carpeta `references/lighthouse/` si no existe. Conserva siempre las leyendas de columnas de la plantilla (qué es y qué valora cada una); si el archivo existente no las tiene, añádelas.
+10. **Actualiza la memoria** `references/lighthouse/lighthouse-audit.md` al terminar: una fila por app × ruta × device, la tabla de paridad si procede, una fila nueva en el historial, los hallazgos abiertos y la fecha y hora de lanzamiento. Crea la carpeta `references/lighthouse/` si no existe. Conserva siempre las leyendas de columnas de la plantilla (qué es y qué valora cada una); si el archivo existente no las tiene, añádelas.
 
 ## Salida final al usuario
 
 Resumen en 5-8 líneas:
 
-- App(s) y rutas auditadas, fecha
+- App(s) y rutas auditadas, fecha y hora de lanzamiento
 - Peor score y peor LCP, con ruta y device
 - Hallazgos por severidad con evidencia
 - Regresiones candidata → referencia (si hay comparación)
@@ -111,7 +112,7 @@ Resumen en 5-8 líneas:
 | TTFB            | Time To First Byte, de la traza                                  | Respuesta del servidor/SSR                                            | referencia ≤ 0,8 s |
 | Elemento LCP    | Nodo que provoca el LCP (selector/tipo)                          | Qué optimizar primero                                                 | —                  |
 | Errores consola | Nº de errores de consola (hidratación, caché, red)               | Salud de ejecución en cliente                                         | 0                  |
-| Última revisión | Fecha de la medición (AAAA-MM-DD)                                | Frescura del dato                                                     | —                  |
+| Última revisión | Fecha y hora de la medición (AAAA-MM-DD HH:MM)                   | Frescura del dato                                                     | —                  |
 
 Leyenda de marcas: `✅` cumple · `❌` incumple · `🟡` aceptado/parcial (deuda aceptada) · `no verificado` servidor apagado o ruta con sesión.
 
@@ -126,10 +127,10 @@ Leyenda: `Δ A11y/BP/SEO` = score candidata − score referencia (puntos; negati
 
 ## Historial de auditorías
 
-| Fecha | App | Resumen | Abiertos |
+| Fecha y hora | App | Resumen | Abiertos |
 | ----- | --- | ------- | -------- |
 
-Leyenda: `Fecha` de la auditoría · `App` auditada(s) · `Resumen` rutas auditadas, peor score y peor LCP · `Abiertos` nº de hallazgos abiertos al cerrar (por severidad Alto/Medio/Bajo).
+Leyenda: `Fecha y hora` de lanzamiento (`AAAA-MM-DD HH:MM`) · `App` auditada(s) · `Resumen` rutas auditadas, peor score y peor LCP · `Abiertos` nº de hallazgos abiertos al cerrar (por severidad Alto/Medio/Bajo).
 
 ## Hallazgos abiertos
 
