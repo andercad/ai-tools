@@ -31,7 +31,7 @@ Aplica siempre, también al implementar una spec:
 6. Antes de dar un paso por terminado, ejecuta `verify` y corrige. Informa qué verificaste y qué no.
 7. Estructura y estilo (si `structure: features` y `templates: external`; detalle en la skill `angular-conventions`):
    - `src/app/shared/` (común y global: componentes, pipes, servicios, guards, interceptores, utils...) y una carpeta por funcionalidad con `components/`, `pages/`, `services/`, `models/`... No hay `core/`.
-   - Componentes de ruta en `pages/`; reutilizables en `components/`.
+   - Componentes de ruta en `pages/`, con `export default class`; las rutas los cargan con `loadComponent: () => import('...')` sin `.then`. Reutilizables en `components/` (export con nombre).
    - Cada componente con su `.html` (`templateUrl`); nunca `template:` inline.
    - Alias de `tsconfig` por funcionalidad y para `shared` (`@shared/*`, `@<funcionalidad>/*`), creados antes de usarlos; imports siempre por alias.
    - Separadores `// ========== Dependencies / Inputs / Outputs / State / Computed / Lifecycle / Public methods / Private methods ==========` (solo bloques con miembros).

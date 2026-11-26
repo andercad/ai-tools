@@ -14,17 +14,18 @@ src/app/
   shared/                  ← común a toda la app, incluido lo global
     components/            ← componentes reutilizables (layout, botones, diálogos...)
     pipes/  directives/  services/  models/  guards/  interceptors/  utils/
-  functionality1/                  ← una carpeta por funcionalidad (antes, un módulo)
+  orders/                  ← una carpeta por funcionalidad (antes, un módulo)
     components/            ← reutilizables dentro de la funcionalidad
     pages/                 ← componentes de ruta
     services/  models/  guards/  interceptors/  utils/
-    functionality1.routes.ts
+    orders.routes.ts
 ```
 
 - Crea solo las subcarpetas que se usen.
 - Una carpeta por funcionalidad detectada. No hay `core/`: lo global (interceptores, guards, servicios, layout) va en la subcarpeta correspondiente de `shared/`.
 - Dependencias permitidas: funcionalidad → `shared`. Una funcionalidad no importa de otra; `shared` no importa de ninguna funcionalidad. Si dos funcionalidades necesitan lo mismo, súbelo a `shared`.
 - **Páginas**: todo componente que se enruta (`loadComponent`, `component:` en rutas) va en `pages/`. Lo que se reutiliza va en `components/`. Un componente no es las dos cosas.
+- **Páginas con `export default`**: la clase de cada página se exporta `export default class OrderListPage {}` (un solo export por fichero) y las rutas la cargan sin `.then`: `loadComponent: () => import('@orders/pages/order-list/order-list')`. Aplica solo a páginas; los componentes de `components/` usan export con nombre.
 - Nombres de fichero: sigue el CLI de la versión instalada (`order-list.ts` en v20+, `order-list.component.ts` antes) y mantén el del repo.
 
 ## 2. Un `.html` por componente
@@ -33,12 +34,12 @@ Todo componente declara `templateUrl` (y `styleUrl` si tiene estilos). **Nunca `
 
 ```typescript
 @Component({
-	selector: 'app-xxx-card',
-	templateUrl: './xxx-card.html',
-	styleUrl: './xxx-card.css',
+	selector: 'app-order-card',
+	templateUrl: './order-card.html',
+	styleUrl: './order-card.css',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class XxxCard {
+export class OrderCard {
 	/* ... */
 }
 ```
@@ -52,7 +53,7 @@ Un alias por funcionalidad y uno para `shared`:
 ```json
 "paths": {
   "@shared/*": ["src/app/shared/*"],
-  "@functionality1/*": ["src/app/functionality1/*"]
+  "@orders/*": ["src/app/orders/*"]
 }
 ```
 
@@ -63,10 +64,10 @@ Un alias por funcionalidad y uno para `shared`:
 
 ```typescript
 // ✅
-import { XxxService } from '@functionality1/services/xxx-service';
+import { OrderService } from '@orders/services/order-service';
 import { Button } from '@shared/components/button/button';
 // ❌
-import { XxxService } from '../../services/xxx-service';
+import { OrderService } from '../../services/order-service';
 ```
 
 ## 4. Separadores de sección en clases

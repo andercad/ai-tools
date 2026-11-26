@@ -48,7 +48,7 @@ El portal está disponible en tres idiomas. **Añade siempre las traducciones en
 | ------------------------------- | ----------------------------------------------------------------- |
 | `shared/`                       | Común y global: components, pipes, directives, services, models, guards, interceptors, utils |
 | `<funcionalidad>/`              | Una por funcionalidad (p. ej. `policies/`, `claims/`)             |
-| `<funcionalidad>/pages/`        | Componentes de ruta (cada uno con su `.html`)                     |
+| `<funcionalidad>/pages/`        | Componentes de ruta (cada uno con su `.html`, `export default class`; rutas con `loadComponent: () => import(...)` sin `.then`) |
 | `<funcionalidad>/components/`    | Componentes reutilizables de la funcionalidad                     |
 | `<funcionalidad>/services/`     | Servicios con lógica de negocio y acceso a API                    |
 | `<funcionalidad>/models/`       | Tipos e interfaces                                                |

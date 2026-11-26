@@ -32,7 +32,7 @@ Aplica la skill precargada `angular-solid`: piezas, responsabilidades, dependenc
 
 ## 5. Definition of Done (antes de informar)
 1. Ejecuta `verify` (o lo deducido: `ng build <proyecto>`, `ng test --watch=false`, `ng lint`, `nx affected -t lint test build`) y corrige hasta que pase.
-2. Comprueba la política: ¿specs creados si `tests: required`?, ¿JSDoc en API pública?, ¿criterios de accesibilidad (WCAG-2.2-AA o el nivel del proyecto) cumplidos?, ¿claves i18n en todos los idiomas?, ¿un `.html` por componente?, ¿páginas en `pages/`?, ¿alias creado e imports por alias?, ¿separadores de sección?
+2. Comprueba la política: ¿specs creados si `tests: required`?, ¿JSDoc en API pública?, ¿criterios de accesibilidad (WCAG-2.2-AA o el nivel del proyecto) cumplidos?, ¿claves i18n en todos los idiomas?, ¿un `.html` por componente?, ¿páginas en `pages/` con `export default` y cargadas sin `.then` en rutas?, ¿alias creado e imports por alias?, ¿separadores de sección?
 3. Informa: qué cambiaste, qué verificaste y qué NO pudiste verificar. No digas que algo funciona sin haberlo ejecutado.
 
 ## Límites
