@@ -1,0 +1,6 @@
+{
+  "name": "auditors",
+  "version": "0.2.0",
+  "description": "Agentes auditores de solo lectura para cualquier proyecto web: lighthouse-auditor (Lighthouse CLI: Rendimiento, Accesibilidad, Prácticas recomendadas, SEO y Navegación agéntica) y security-auditor (código, config, dependencias y BD, con checklist OWASP).",
+  "keywords": ["lighthouse", "security", "audit", "performance", "accessibility", "seo", "owasp"]
+}

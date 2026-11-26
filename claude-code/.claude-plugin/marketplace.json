@@ -25,6 +25,11 @@
 			"description": "Agentes dev y arquitectura para Liferay DXP 2025.Q1+, política de calidad (permisos, seguridad, docs, tests unitarios y de integración) y hooks. Sin dependencias externas."
 		},
 		{
+			"name": "auditors",
+			"source": "./plugins/auditors",
+			"description": "Agentes auditores de solo lectura: lighthouse-auditor (Lighthouse CLI: Rendimiento, Accesibilidad, Prácticas recomendadas, SEO y Navegación agéntica) y security-auditor (código, config, dependencias y BD). Sin dependencias externas de plugins."
+		},
+		{
 			"name": "angular-skills",
 			"description": "Skill oficial angular-developer (equipo de Angular, MIT). Sigue main de angular/angular.",
 			"source": {
