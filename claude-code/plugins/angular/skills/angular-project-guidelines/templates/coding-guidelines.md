@@ -38,50 +38,13 @@ El portal está disponible en tres idiomas. **Añade siempre las traducciones en
 
 ---
 
-## Estructura de carpetas
+## Estructura, alias y estilo de código
 
-**Qué necesita**: la organización vigente de `src/app/` (o equivalente), con el propósito de cada carpeta de primer nivel. Sirve para que el agente sepa dónde ubicar cada nuevo artefacto (componente, servicio, guard, util...).
+Los defaults (estructura `shared/` + carpeta por funcionalidad, `pages/`, un `.html` por componente, alias por carpeta, separadores de sección y JSDoc) los aporta la skill `angular-conventions`; **no se repiten aquí**. Rellena esta sección solo si el proyecto **difiere** (y refléjalo también en `structure:` / `templates:` del bloque `## Convenciones Angular`):
 
-**Ejemplo** (por defecto del plugin, ver skill `angular-conventions`): `src/app/shared/` más una carpeta por funcionalidad. No hay `core/`; lo global va en la subcarpeta de `shared/`.
-
-| Carpeta                         | Propósito                                                         |
-| ------------------------------- | ----------------------------------------------------------------- |
-| `shared/`                       | Común y global: components, pipes, directives, services, models, guards, interceptors, utils |
-| `<funcionalidad>/`              | Una por funcionalidad (p. ej. `policies/`, `claims/`)             |
-| `<funcionalidad>/pages/`        | Componentes de ruta (cada uno con su `.html`, `export default class`; rutas con `loadComponent: () => import(...)` sin `.then`) |
-| `<funcionalidad>/components/`    | Componentes reutilizables de la funcionalidad                     |
-| `<funcionalidad>/services/`     | Servicios con lógica de negocio y acceso a API                    |
-| `<funcionalidad>/models/`       | Tipos e interfaces                                                |
-| `<funcionalidad>/guards/` `interceptors/` `utils/` | Solo si la funcionalidad los necesita          |
-| `<funcionalidad>/<funcionalidad>.routes.ts` | Rutas de la funcionalidad                             |
-
----
-
-## Alias de `tsconfig.json`
-
-**Qué necesita**: los alias definidos en `compilerOptions.paths`, la ruta a la que apunta cada uno y la política de uso (obligatorio o no, excepciones permitidas, qué hacer al crear una carpeta nueva).
-
-**Ejemplo**:
-
-Usa **siempre** los alias configurados. No uses imports relativos salvo dependencia cíclica documentada:
-
-| Alias             | Ruta                     |
-| ----------------- | ------------------------ |
-| `@shared/*`       | `src/app/shared/*`       |
-| `@policies/*`     | `src/app/policies/*`     |
-| `@claims/*`       | `src/app/claims/*`       |
-| `@environments/*` | `src/environments/*`     |
-
-Un alias por funcionalidad y uno para `shared`. Cuando crees una carpeta de funcionalidad en `src/app/`, añade su alias en `tsconfig.json` antes de usarla.
-
-```typescript
-// ✅ Correcto
-import { PolicyService } from '@policies/services/policy-service';
-import { Button } from '@shared/components/button/button';
-
-// ❌ Evitar
-import { PolicyService } from '../../services/policy-service';
-```
+- **Estructura distinta**: carpetas de primer nivel de `src/app/` y su propósito.
+- **Alias propios**: los de `compilerOptions.paths` que no sigan "uno por funcionalidad + `shared`" (p. ej. `@environments/*`).
+- **Estilo distinto**: separadores, JSDoc o nombres de fichero que no sean los del plugin.
 
 ---
 
@@ -170,27 +133,3 @@ El proyecto usa **Angular Material** y **Material Symbols**:
 | `mat-snackbar` | Notificaciones al usuario                  |
 | `mat-dialog`   | Diálogos de confirmación y detalle         |
 
----
-
-## Documentación y separadores de sección
-
-**Qué necesita**: las convenciones de documentación del código (JSDoc/TSDoc obligatorio o no, etiquetas requeridas como `@example`) y, si se usan, los separadores que delimitan los bloques de miembros dentro de las clases, con su orden canónico y excepciones.
-
-**Ejemplo**:
-
-Usa separadores de sección en clases para delimitar los bloques canónicos de miembros:
-
-```typescript
-// ========== Dependencies ==========
-// ========== Inputs ==========
-// ========== Outputs ==========
-// ========== State ==========
-// ========== Computed ==========
-// ========== Lifecycle ==========
-// ========== Public methods ==========
-// ========== Private methods ==========
-```
-
-- Incluye solo los bloques que contengan al menos un miembro.
-- Adapta el nombre del bloque cuando añada claridad (ej. `// ========== HTTP ==========` en un servicio con muchas llamadas a la API).
-- Los componentes de página **no necesitan `@example`** en su JSDoc. Los componentes reutilizables sí.

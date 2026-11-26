@@ -1,6 +1,6 @@
 ---
 name: angular-conventions
-description: 'Convenciones de código por defecto del plugin Angular estructura de carpetas por funcionalidad más shared, páginas separadas de componentes reutilizables, un .html por componente (sin template inline), alias de tsconfig por carpeta y separadores de sección en clases. Usar cuando se cree o mueva un componente, página, servicio, guard, interceptor, modelo o util, cuando se configuren alias de tsconfig o se decida dónde ubicar código nuevo. No usar para decisiones de topología (monorepo, microfrontends); para eso, angular-architecture.'
+description: 'Convenciones de código por defecto del plugin Angular estructura de carpetas por funcionalidad más shared, páginas separadas de componentes reutilizables, un .html por componente (sin template inline), alias de tsconfig por carpeta y separadores de sección en clases. Usar cuando se cree o mueva un componente, página, servicio, guard, interceptor, modelo o util, cuando se configuren alias de tsconfig o se decida dónde ubicar código nuevo. No usar para decisiones de topología (monorepo, microfrontends); para eso, angular-architecture. Define el estilo y la estructura del código (defaults del plugin); la política de calidad del proyecto (tests, a11y, docs) va en angular-project-guidelines.'
 ---
 
 # Convenciones de código Angular

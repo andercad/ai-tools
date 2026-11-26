@@ -1,6 +1,6 @@
 ---
 name: angular-project-guidelines
-description: 'Crea o actualiza en el CLAUDE.md del proyecto el bloque "Convenciones Angular" (política de tests, a11y con base WCAG-2.2-AA, docs, i18n, verify) y las reglas de implementación y de specs que aplican en cualquier flujo, incluido /spec y /spec-impl. Usar cuando el proyecto no tiene ese bloque, el usuario pide configurar los agentes Angular para su proyecto o cambiar la política de calidad. No usar para implementar código.'
+description: 'Crea o actualiza en el CLAUDE.md del proyecto el bloque "Convenciones Angular" (política de tests, a11y con base WCAG-2.2-AA, docs, i18n, verify) y las reglas de implementación y de specs que aplican en cualquier flujo, incluido /spec y /spec-impl. Usar cuando el proyecto no tiene ese bloque, el usuario pide configurar los agentes Angular para su proyecto o cambiar la política de calidad. No usar para implementar código ni para definir estructura o estilo de código; eso es angular-conventions.'
 ---
 
 # Política del proyecto → `CLAUDE.md`
@@ -9,20 +9,23 @@ Claude Code carga el `CLAUDE.md` en cada sesión y en cualquier flujo (también 
 
 ## Bloque a escribir (adapta las claves; borra comentarios)
 
-````markdown
+```markdown
 ## Convenciones Angular
-- tests: required | optional | none      # specs unitarios para componentes, servicios, guards, pipes, directivas nuevos
-- coverage: 80                           # opcional
-- a11y: WCAG-2.2-AA                      # base obligatoria; cámbiala solo si el proyecto exige otro nivel (p. ej. WCAG-2.1-AA, WCAG-2.2-AAA)
-- docs: jsdoc | none                     # JSDoc en API pública (clases, métodos públicos, inputs/outputs)
-- i18n: es,en | none
+
+- tests: required | optional | none # specs unitarios para componentes, servicios, guards, pipes, directivas nuevos
+- coverage: 80 # opcional
+- a11y: WCAG-2.2-AA # base obligatoria; cámbiala solo si el proyecto exige otro nivel (p. ej. WCAG-2.1-AA, WCAG-2.2-AAA)
+- docs: jsdoc | none # JSDoc en API pública (clases, métodos públicos, inputs/outputs)
+- i18n: es,eu | none
 - workspace: app | cli-multiproject | nx
-- structure: <descripción>               # solo si el repo usa una estructura distinta de la que aporta el plugin (shared + carpeta por funcionalidad); tiene prioridad sobre las convenciones de estructura del plugin (que se cargan siempre)
-- templates: inline                      # solo si el repo usa template inline; por defecto el plugin exige un .html por componente
+- structure: <descripción> # solo si el repo usa una estructura distinta de la que aporta el plugin (shared + carpeta por funcionalidad); tiene prioridad sobre las convenciones de estructura del plugin (que se cargan siempre)
+- templates: inline # solo si el repo usa template inline; por defecto el plugin exige un .html por componente
 - verify: ng build && ng test --watch=false && ng lint
 
 ### Al implementar código Angular
+
 Aplica siempre, también al implementar una spec:
+
 1. Antes de escribir una pieza >30 líneas o que toque varias clases, decide en 5–8 líneas piezas, responsabilidad única, dependencias y extensión (SOLID; skill `angular-solid`). Sin capas ni abstracciones prematuras. No generes para luego rehacer.
 2. Plantillas accesibles desde el principio al nivel `a11y` (base WCAG-2.2-AA, siempre): lee la skill `angular-quality-a11y` antes de escribir cualquier plantilla; semántica nativa, nombre accesible, teclado, foco, contraste y tamaño de objetivo.
 3. `docs: jsdoc` → JSDoc conciso en API pública, nada sobre lo evidente.
@@ -31,20 +34,23 @@ Aplica siempre, también al implementar una spec:
 6. Antes de dar un paso por terminado, ejecuta `verify` y corrige. Informa qué verificaste y qué no.
 
 ### Al redactar specs de este proyecto
+
 Además de lo que pida la plantilla de `/spec`, cada spec Angular incluye:
+
 - **Diseño de clases**: piezas, responsabilidad de cada una y dependencias (SOLID).
 - **Criterios de aceptación de accesibilidad** al nivel `a11y` (teclado, foco, etiquetas, contraste, tamaño de objetivo) para toda pantalla o componente con UI.
 - **Plan de tests** por pieza (casos y límites) si `tests` ≠ none, e incluir su `.spec.ts` en el mismo paso del plan que la pieza.
 - **Ubicación de cada pieza**: carpeta según la estructura del proyecto y alias nuevos que haya que crear.
 - **Comando `verify`** como criterio de aceptación final.
-````
+```
 
 Defaults si falta una clave: `a11y: WCAG-2.2-AA` (siempre aplica), `tests: none`, `docs: jsdoc`, `i18n: none`, `verify` deducible del workspace.
 
 ## Pasos
+
 1. Lee el `CLAUDE.md`; si ya existe el bloque, actualízalo, no lo dupliques.
 2. Deduce valores del repo: `package.json` (runner, scripts), `angular.json`/`nx.json`, `tsconfig*.json` (alias), `src/app`, ficheros de i18n, ESLint (`templateAccessibility`).
    Las convenciones de estructura y estilo las aporta el plugin (hook `SessionStart`), no se copian aquí. Si la estructura actual de `src/app` difiere de la del plugin, pregunta si el código nuevo sigue la del plugin o se mantiene la existente (en ese caso descríbela en `structure`). Si el repo usa `template:` inline, escribe `templates: inline`.
 3. Pregunta solo lo no deducible (máx. 3): política de tests, idiomas y si el proyecto exige un nivel de accesibilidad distinto de WCAG-2.2-AA.
-4. Escribe el bloque con los valores reales. Elimina las líneas de reglas que no apliquen (p. ej. i18n si es none). Añade, solo si aporta, estructura de carpetas y alias con [templates/coding-guidelines.md](templates/coding-guidelines.md) como guía.
+4. Escribe el bloque con los valores reales. Elimina las líneas de reglas que no apliquen (p. ej. i18n si es none). Si el proyecto necesita datos propios (i18n scopes, interceptores, design system) o difiere de los defaults de `angular-conventions` (estructura, alias, estilo), usa [templates/coding-guidelines.md](templates/coding-guidelines.md) como guía; no repitas ahí los defaults.
 5. Muestra el diff; no inventes datos de cliente ni de dominio.

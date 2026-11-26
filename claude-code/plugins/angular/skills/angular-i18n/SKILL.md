@@ -6,10 +6,12 @@ description: 'Internacionalización con Transloco en Angular. Usar al añadir te
 # i18n con Transloco
 
 ## Reglas clave
+
 - Todo texto visible va por i18n; sin literales en plantillas si el proyecto es multilingüe.
-- Añade la clave en **todos** los idiomas definidos en el `CLAUDE.md` del proyecto (`i18n: es,en,...`).
+- Añade la clave en **todos** los idiomas definidos en el `CLAUDE.md` del proyecto (`i18n: es,eu,...`).
 - Claves jerárquicas por feature/scope; sin concatenar frases traducidas.
 - Títulos de página y atributos accesibles (`aria-label`, `alt`) también se traducen.
 
 ## Referencia
+
 - [i18n.md](references/i18n.md): scopes, organización de claves, uso en templates y TypeScript, títulos de página y checklist. Asume Transloco; si el proyecto usa otra librería, adapta.
