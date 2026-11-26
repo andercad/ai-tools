@@ -20,6 +20,7 @@ Claude Code carga el `CLAUDE.md` en cada sesión y en cualquier flujo (también 
 - workspace: app | cli-multiproject | nx
 - structure: <descripción> # solo si el repo usa una estructura distinta de la que aporta el plugin (shared + carpeta por funcionalidad); tiene prioridad sobre las convenciones de estructura del plugin (que se cargan siempre)
 - templates: inline # solo si el repo usa template inline; por defecto el plugin exige un .html por componente
+- routes: free # solo si el repo no sigue la convención de rutas del plugin (lazy, sin router propio para una sola página); desactiva el hook de rutas
 - verify: ng build && ng test --watch=false && ng lint
 
 ### Al implementar código Angular

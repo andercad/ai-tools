@@ -11,22 +11,54 @@ Aplican por defecto al **código nuevo**. Si el `CLAUDE.md` del proyecto (`## Co
 
 ```
 src/app/
-  shared/                  ← común a toda la app, incluido lo global
+  shared/                  ← común a toda la app, sin dominio
     components/            ← componentes reutilizables (layout, botones, diálogos...)
-    pipes/  directives/  services/  models/  guards/  interceptors/  utils/
+    pipes/  directives/  services/  models/  utils/   ← genéricos, sin lógica de una funcionalidad
   orders/                  ← una carpeta por funcionalidad (antes, un módulo)
     components/            ← reutilizables dentro de la funcionalidad
     pages/                 ← componentes de ruta
     services/  models/  guards/  interceptors/  utils/
     orders.routes.ts
+  auth/
+    services/  guards/  interceptors/  models/
+    auth.routes.ts
 ```
 
 - Crea solo las subcarpetas que se usen.
-- Una carpeta por funcionalidad detectada. No hay `core/`: lo global (interceptores, guards, servicios, layout) va en la subcarpeta correspondiente de `shared/`.
-- Dependencias permitidas: funcionalidad → `shared`. Una funcionalidad no importa de otra; `shared` no importa de ninguna funcionalidad. Si dos funcionalidades necesitan lo mismo, súbelo a `shared`.
+- Una carpeta por funcionalidad detectada. Cada pieza va en la funcionalidad a la que pertenece: `AuthService`, `authGuard` o el interceptor del token van en `auth/`; `OrderService` en `orders/`. Solo lo genérico sin dominio (modelo o servicio genérico, layout, pipes, utils) va en `shared/`. No hay `core/`.
+- Dependencias permitidas: funcionalidad → `shared`. Una funcionalidad no importa de otra salvo por su API pública (barrel o alias de la funcionalidad dueña); `shared` no importa de ninguna funcionalidad. Si una pieza genérica es necesaria en dos funcionalidades, súbela a `shared`; si es de dominio, expón su API pública desde la funcionalidad dueña.
+- Los guards, interceptores y providers que cablea la aplicación (`app.config.ts`, `app.routes.ts`) pueden importar de cualquier funcionalidad: son la capa de composición.
 - **Páginas**: todo componente que se enruta (`loadComponent`, `component:` en rutas) va en `pages/`. Lo que se reutiliza va en `components/`. Un componente no es las dos cosas.
 - **Páginas con `export default`**: la clase de cada página se exporta `export default class OrderListPage {}` (un solo export por fichero) y las rutas la cargan sin `.then`: `loadComponent: () => import('@orders/pages/order-list/order-list')`. Aplica solo a páginas; los componentes de `components/` usan export con nombre.
 - Nombres de fichero: sigue el CLI de la versión instalada (`order-list.ts` en v20+, `order-list.component.ts` antes) y mantén el del repo.
+
+### Rutas
+
+Todas las rutas son lazy. `app.routes.ts` tiene una entrada por funcionalidad y el nivel depende de cuántas páginas tenga:
+
+```typescript
+// app.routes.ts
+export const routes: Routes = [
+	// Funcionalidad con una sola página: se registra aquí, sin <funcionalidad>.routes.ts
+	{ path: 'login', loadComponent: () => import('@auth/pages/login/login') },
+	// Funcionalidad con varias páginas o rutas hijas: router propio, cargado en bloque
+	{ path: 'orders', loadChildren: () => import('@orders/orders.routes').then((m) => m.ORDERS_ROUTES) },
+];
+
+// orders/orders.routes.ts
+export const ORDERS_ROUTES: Routes = [
+	{ path: '', loadComponent: () => import('@orders/pages/order-list/order-list') },
+	{ path: ':id', loadComponent: () => import('@orders/pages/order-detail/order-detail') },
+];
+```
+
+- **Primer nivel** (`app.routes.ts`): un `path` por funcionalidad. Una sola página → `loadComponent` directo. Varias → `loadChildren` hacia `<funcionalidad>.routes.ts`.
+- **Segundo nivel** (`<funcionalidad>.routes.ts`): solo si la funcionalidad tiene 2+ rutas (páginas, detalle, rutas hijas con `children`). Un router de segundo nivel con una sola ruta es sobreingeniería: súbela a `app.routes.ts`.
+- Si una funcionalidad con router propio se queda con una sola ruta, súbela y elimina el fichero; si una de página única crece, crea su `<funcionalidad>.routes.ts` y cambia a `loadChildren`.
+- Nunca `component:` (eager) ni `children:` con un array importado estáticamente. Siempre `loadComponent` / `loadChildren`.
+- `loadComponent` apunta a `pages/` y sin `.then` (ver "Páginas con `export default`").
+- Redirects (`redirectTo`), comodines (`**`) y guards se declaran junto a la ruta que los usa.
+- El hook `Stop` (`check-routes.mjs`) lo hace cumplir: bloquea `component:`, `loadComponent` fuera de `pages/` o con `.then`, `children:` estático, `*.routes.ts` de una sola ruta y páginas sin `export default class`. Se desactiva con `routes: free` en el `CLAUDE.md`.
 
 ## 2. Un `.html` por componente
 

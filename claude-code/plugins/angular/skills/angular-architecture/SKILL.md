@@ -17,8 +17,9 @@ Definir una estructura proporcional al tamaño del producto y del equipo, con l�
 Los microfrontends son una decisión organizativa, no técnica: exige drivers y compara siempre con la aplicación única por features.
 
 ## Estructura por features
-- `src/app/<funcionalidad>/`: una carpeta por funcionalidad con su `<funcionalidad>.routes.ts` (lazy), `pages/` (componentes de ruta), `components/`, `services/`, `models/`, etc.
-- `src/app/shared/`: lo común y lo global (layout, interceptores, guards, servicios, componentes presentacionales sin dependencias de dominio, pipes, utils) en su subcarpeta; sin carpeta `core/`.
+- `src/app/<funcionalidad>/`: una carpeta por funcionalidad con su `<funcionalidad>.routes.ts` (lazy; solo si tiene 2+ rutas), `pages/` (componentes de ruta), `components/`, `services/`, `models/`, etc.
+- `src/app/shared/`: lo común y genérico sin dominio (layout, componentes presentacionales sin dependencias de dominio, pipes, utils, modelos y servicios genéricos); sin carpeta `core/`.
+- Guards, interceptores y servicios ligados a una funcionalidad (p. ej. auth) van en la carpeta de esa funcionalidad, no en `shared/`. La funcionalidad se elige por dominio, no por si la usan otras piezas.
 - Un alias de `tsconfig` por funcionalidad y uno para `shared` (`@<funcionalidad>/*`, `@shared/*`). Detalle en la skill `angular-conventions`.
 Dependencias permitidas: feature → shared; feature ↛ otra feature salvo por su API pública; shared ↛ feature. Verifica los límites en CI como fitness function (reglas de límites de Nx, `eslint-plugin-boundaries`, dependency-cruiser). Standalone es el modelo por defecto en versiones recientes; NgModules solo en legado (ver `angular-modernization-governance`).
 
@@ -30,6 +31,7 @@ Dependencias permitidas: feature → shared; feature ↛ otra feature salvo por 
 
 ## Routing
 - Rutas lazy por feature; estrategia de preloading según patrones de navegación medidos.
+- Una entrada por feature en `app.routes.ts`: una sola página → `loadComponent` directo; 2+ rutas → `loadChildren` hacia `<funcionalidad>.routes.ts`. Sin router de segundo nivel para una sola ruta (detalle en `angular-conventions`).
 - Guards como experiencia de usuario, nunca como autorización.
 - Resolvers bloquean la navegación; la carga en el componente con skeleton mejora la percepción. Decide por ruta.
 - Deep links, SSR y gestión del foco y del título en cada navegación (accesibilidad).

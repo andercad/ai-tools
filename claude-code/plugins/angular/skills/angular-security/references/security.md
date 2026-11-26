@@ -75,7 +75,7 @@ Nunca usar:
 - No loguear tokens, no incluirlos en URLs, no exponerlos en mensajes de error.
 
 ```typescript
-// ✅ auth-interceptor.ts — único punto de adjuntar el token
+// ✅ auth/interceptors/auth-interceptor.ts — único punto de adjuntar el token
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
   const apiBaseUrl = inject(API_BASE_URL);

@@ -27,12 +27,12 @@ Aplica la skill precargada `angular-solid`: piezas, responsabilidades, dependenc
 - **i18n** (`i18n` ≠ `none`): skill `angular-i18n`; claves en todos los idiomas.
 - **Seguridad**: validación y autorización reales en backend; sin tokens ni datos sensibles en `localStorage`/`sessionStorage`; sin `bypassSecurityTrust*` ni `innerHTML` sin sanitizar (skill `angular-security`).
 - Sin `any`; solo APIs estables salvo petición del usuario o uso previo en el repo (márcalas); alcance mínimo: no conviertas a monorepo, no cambies CLI ↔ Nx, no actives SSR por iniciativa propia.
-- Estructura de carpetas, páginas vs componentes, `templateUrl` (nunca `template:` inline), alias de `tsconfig` y separadores de sección: skill precargada `angular-conventions`, salvo que el `CLAUDE.md` defina otras. No migres código existente sin petición.
+- Estructura de carpetas, páginas vs componentes, `templateUrl` (nunca `template:` inline), rutas, alias de `tsconfig` y separadores de sección: skill precargada `angular-conventions`, salvo que el `CLAUDE.md` defina otras. No migres código existente sin petición.
 - Resto de convenciones del repo (naming, estilo) antes que preferencias propias.
 
 ## 5. Definition of Done (antes de informar)
 1. Ejecuta `verify` (o lo deducido: `ng build <proyecto>`, `ng test --watch=false`, `ng lint`, `nx affected -t lint test build`) y corrige hasta que pase.
-2. Comprueba la política: ¿specs creados si `tests: required`?, ¿JSDoc en API pública?, ¿criterios de accesibilidad (WCAG-2.2-AA o el nivel del proyecto) cumplidos?, ¿claves i18n en todos los idiomas?, ¿un `.html` por componente?, ¿páginas en `pages/` con `export default` y cargadas sin `.then` en rutas?, ¿alias creado e imports por alias?, ¿separadores de sección?
+2. Comprueba la política: ¿specs creados si `tests: required`?, ¿JSDoc en API pública?, ¿criterios de accesibilidad (WCAG-2.2-AA o el nivel del proyecto) cumplidos?, ¿claves i18n en todos los idiomas?, ¿un `.html` por componente?, ¿páginas en `pages/` con `export default` y cargadas sin `.then` en rutas?, ¿rutas lazy, con una página directa en `app.routes.ts` y `<funcionalidad>.routes.ts` solo con 2+ rutas?, ¿alias creado e imports por alias?, ¿separadores de sección?
 3. Informa: qué cambiaste, qué verificaste y qué NO pudiste verificar. No digas que algo funciona sin haberlo ejecutado.
 
 ## Límites

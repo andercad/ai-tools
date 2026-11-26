@@ -7,8 +7,8 @@ Flujo spec → implementación → verificación para Angular (app única, Angul
 - **`angular-dev`**: diseña con SOLID antes de escribir, genera código accesible y documentado, crea tests si la política lo pide y verifica (`verify`) antes de informar.
 - **`angular-architect`** (solo lectura): evalúa, compara alternativas, redacta ADR, matrices de decisión y riesgos, planifica upgrades.
 - **Skills propias**: `angular-solid` (precargada en `angular-dev`), `angular-quality-a11y`, `angular-i18n`, `angular-security`, `angular-workspace`, `angular-project-guidelines`, más 8 de arquitectura (`angular-architecture-assessment`, `angular-architecture`, `angular-reactivity-state`, `angular-rendering-performance`, `angular-quality-security`, `angular-backend-integration`, `angular-liferay-integration`, `angular-modernization-governance`).
-- **Convenciones por defecto** (skill `angular-conventions`, precargada en `angular-dev`): `src/app/shared/` (común y global) + una carpeta por funcionalidad (`components/`, `pages/`, `services/`...); componentes de ruta en `pages/` con `export default` y carga en rutas sin `.then`; un `.html` por componente; alias de `tsconfig` por carpeta (`@shared/*`, `@<funcionalidad>/*`); separadores de sección en clases. Código nuevo; no migra lo existente.
-- **Hooks**: `PostToolUse` (prettier/eslint si el proyecto los tiene) y `Stop`/`SubagentStop` (bloquea el cierre si `tests: required` y hay componentes/servicios/directivas/pipes/guards sin `.spec.ts`, o si un componente usa `template:` inline salvo `templates: inline`).
+- **Convenciones por defecto** (skill `angular-conventions`, precargada en `angular-dev`): `src/app/shared/` (común y genérico, sin dominio) + una carpeta por funcionalidad, donde van sus servicios, guards, interceptores y modelos (`components/`, `pages/`, `services/`...; p. ej. `auth/` para autenticación); componentes de ruta en `pages/` con `export default` y carga en rutas sin `.then`; rutas lazy con una entrada por funcionalidad en `app.routes.ts` (`loadComponent` si tiene una página, `loadChildren` + `<funcionalidad>.routes.ts` si tiene varias); un `.html` por componente; alias de `tsconfig` por carpeta (`@shared/*`, `@<funcionalidad>/*`); separadores de sección en clases. Código nuevo; no migra lo existente.
+- **Hooks**: `PostToolUse` (prettier/eslint si el proyecto los tiene) y `Stop`/`SubagentStop` (bloquea el cierre si `tests: required` y hay componentes/servicios/directivas/pipes/guards sin `.spec.ts`, o si un componente usa `template:` inline salvo `templates: inline`; o si las rutas incumplen la convención —lazy siempre, páginas en `pages/`, `*.routes.ts` solo con 2+ rutas— salvo `routes: free`).
 - **`/angular:angular-review`**: revisión de solo lectura del diff.
 
 ## Dependencias (se instalan solas y siguen a `main`)
@@ -32,6 +32,7 @@ Sin `sha` fijado, recibe cambios de upstream automáticamente (con auto-update d
 - workspace: app | cli-multiproject | nx
 - structure: features # defecto; describe otra si el repo ya usa una distinta
 - templates: external | inline # external (defecto): sin template inline
+- routes: convention | free # convention (defecto): rutas lazy, una sola página sin router propio; free desactiva el hook de rutas
 - verify: ng build && ng test --watch=false && ng lint
 ```
 

@@ -86,7 +86,7 @@ const hooks = JSON.parse(readFileSync(path.join(root, "hooks", "hooks.json"), "u
 check(hooks.hooks && hooks.hooks.PostToolUse, "hooks.json: falta wrapper hooks/PostToolUse");
 check(hooks.hooks && hooks.hooks.Stop, "hooks.json: falta hook Stop");
 check(hooks.hooks && hooks.hooks.SessionStart, "hooks.json: falta hook SessionStart");
-for (const s of ["format-lint.mjs", "check-specs.mjs", "check-templates.mjs", "inject-conventions.mjs"]) {
+for (const s of ["format-lint.mjs", "check-specs.mjs", "check-templates.mjs", "check-routes.mjs", "inject-conventions.mjs"]) {
   check(existsSync(path.join(root, "scripts", s)), `falta scripts/${s}`);
 }
 

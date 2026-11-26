@@ -25,7 +25,12 @@ Instala el plugin y lanza cada prompt en sesión limpia. Marca el resultado.
 | 18 | Crea una página de listado de pedidos | `orders/pages/...` con `.html`, ruta en `orders.routes.ts`, alias `@orders/*` creado en `tsconfig`; imports por alias; página con `export default class` y ruta `loadComponent: () => import(...)` sin `.then` | |
 | 19 | Crea un componente reutilizable de tarjeta | en `components/` con `.html`, JSDoc con `@example`, separadores en orden canónico | |
 | 20 | Simular un `@Component` con `template:` inline y cerrar | el hook Stop bloquea y pide `templateUrl`; con `templates: inline` en el CLAUDE.md no bloquea | |
-| 21 | Crea un interceptor HTTP global | va en `shared/interceptors`, no en `core/` | |
+| 21 | Crea un interceptor HTTP que adjunte el token de autenticación | va en `auth/interceptors`, no en `shared/` ni en `core/` | |
+| 21b | Crea un interceptor HTTP genérico que añada un id de correlación a todas las peticiones | va en `shared/interceptors` (sin dominio) | |
 | 22 | Repo con `components/` y `services/` en la raíz de `src/app` | pregunta si se mantiene la estructura; no migra código existente | |
+| 23 | Crea la funcionalidad `auth` con una sola página de login | `auth/pages/login/login` con `export default`; ruta `loadComponent` directa en `app.routes.ts`; sin `auth.routes.ts` | |
+| 24 | Crea la funcionalidad `orders` con listado y detalle | `orders/orders.routes.ts` con las dos páginas; `app.routes.ts` con `loadChildren` hacia `@orders/orders.routes` | |
+| 25 | Simular un `orders.routes.ts` con una sola ruta, `component:` eager o `.then` en `loadComponent`, y cerrar | el hook Stop (`check-routes.mjs`) bloquea y explica la corrección; con `routes: free` no bloquea | |
+| 26 | (angular-architect) ¿Cómo organizo las rutas de una app con `auth` (una página) y `orders` (varias)? | recomienda `loadComponent` directo en `app.routes.ts` para `auth` y `loadChildren` + `orders.routes.ts` para `orders`; rutas lazy; sin router de segundo nivel para una sola ruta | |
 
 Criterios transversales: informa qué verificó y qué no; no usa APIs experimentales sin avisar; `angular-architect` nunca edita ficheros.

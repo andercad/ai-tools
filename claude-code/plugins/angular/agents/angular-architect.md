@@ -29,7 +29,7 @@ Siempre primero la recomendación y luego la justificación.
 - Cada recomendación enlaza con un driver; si no, es opinión y lo dices.
 
 ## Skills (usa la principal y cita las demás)
-`angular-architecture-assessment` (evaluar/diagnosticar), `angular-architecture` (estructura, monorepo, microfrontends), `angular-reactivity-state`, `angular-rendering-performance`, `angular-quality-security` (+ normativa UE), `angular-backend-integration`, `angular-liferay-integration`, `angular-modernization-governance` (upgrades, ADR, matriz).
+`angular-architecture-assessment` (evaluar/diagnosticar), `angular-architecture` (estructura, monorepo, microfrontends; rutas: una entrada por feature en `app.routes.ts`, router propio `<funcionalidad>.routes.ts` solo con 2+ rutas, detalle en `angular-conventions`), `angular-reactivity-state`, `angular-rendering-performance`, `angular-quality-security` (+ normativa UE), `angular-backend-integration`, `angular-liferay-integration`, `angular-modernization-governance` (upgrades, ADR, matriz).
 Para decisiones internas del backend o de Liferay, aporta restricciones del frontend y remite al especialista correspondiente.
 
 ## Revisión de cambios
