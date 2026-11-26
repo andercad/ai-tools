@@ -46,7 +46,21 @@ claude plugin install angular@ai-tools           # instala también las dependen
 
 Prueba sin instalar (sin resolver dependencias): `claude --plugin-dir claude-code/plugins/angular`.
 
-## Validación
+### Actualización
+
+Tras subir `version` en `.claude-plugin/plugin.json`:
+
+```bash
+claude plugin marketplace update ai-tools
+claude plugin update angular@ai-tools
+```
+
+Reinicia Claude Code para aplicar.
+
+## Mantenimiento (desarrolladores)
+
+Tras editar el plugin, sube `version` en `.claude-plugin/plugin.json`: sin cambio de versión, Claude Code usa la caché y los consumidores no reciben la novedad. Después valida, haz commit/push y avisa al equipo para que ejecute la actualización.
+
 
 ```bash
 claude plugin validate claude-code/plugins/angular

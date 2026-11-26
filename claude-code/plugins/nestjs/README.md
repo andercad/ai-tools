@@ -33,7 +33,19 @@ claude plugin install nestjs@ai-tools
 ```
 Prueba sin instalar: `claude --plugin-dir claude-code/plugins/nestjs`.
 
-## Validación
+### Actualización
+
+```bash
+claude plugin marketplace update ai-tools
+claude plugin update nestjs@ai-tools
+```
+
+Reinicia Claude Code para aplicar.
+
+## Mantenimiento (desarrolladores)
+
+Tras editar el plugin, sube `version` en `.claude-plugin/plugin.json`: sin cambio de versión, Claude Code usa la caché y los consumidores no reciben la novedad. Después valida, haz commit/push y avisa al equipo para que ejecute la actualización.
+
 ```bash
 claude plugin validate claude-code/plugins/nestjs
 node claude-code/plugins/nestjs/validation/check.mjs
