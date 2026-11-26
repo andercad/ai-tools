@@ -32,6 +32,7 @@ Aplica siempre, también al implementar una spec:
 4. `tests: required` → crea el `.spec.ts` junto a cada pieza nueva o modificada, en el mismo paso, no en un paso posterior.
 5. Sintaxis y APIs de Angular: skill `angular-developer`. Solo APIs estables salvo petición o uso previo.
 6. Antes de dar un paso por terminado, ejecuta `verify` y corrige. Informa qué verificaste y qué no.
+7. `tests` ≠ none con Vitest → asegura `@vitest/coverage-v8` en `devDependencies` (misma versión que `vitest`) para que `ng test --coverage` funcione.
 
 ### Al redactar specs de este proyecto
 
@@ -51,6 +52,7 @@ Defaults si falta una clave: `a11y: WCAG-2.2-AA` (siempre aplica), `tests: none`
 1. Lee el `CLAUDE.md`; si ya existe el bloque, actualízalo, no lo dupliques.
 2. Deduce valores del repo: `package.json` (runner, scripts), `angular.json`/`nx.json`, `tsconfig*.json` (alias), `src/app`, ficheros de i18n, ESLint (`templateAccessibility`).
    Las convenciones de estructura y estilo las aporta el plugin (hook `SessionStart`), no se copian aquí. Si la estructura actual de `src/app` difiere de la del plugin, pregunta si el código nuevo sigue la del plugin o se mantiene la existente (en ese caso descríbela en `structure`). Si el repo usa `template:` inline, escribe `templates: inline`.
+   Si `tests` ≠ none y el proyecto usa Vitest, comprueba `@vitest/coverage-v8` en `devDependencies`; si falta, instálalo con la misma versión que `vitest`.
 3. Pregunta solo lo no deducible (máx. 3): política de tests, idiomas y si el proyecto exige un nivel de accesibilidad distinto de WCAG-2.2-AA.
 4. Escribe el bloque con los valores reales. Elimina las líneas de reglas que no apliquen (p. ej. i18n si es none). Si el proyecto necesita datos propios (i18n scopes, interceptores, design system) o difiere de los defaults de `angular-conventions` (estructura, alias, estilo), usa [templates/coding-guidelines.md](templates/coding-guidelines.md) como guía; no repitas ahí los defaults.
 5. Muestra el diff; no inventes datos de cliente ni de dominio.
