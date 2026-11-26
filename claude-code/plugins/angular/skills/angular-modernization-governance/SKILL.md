@@ -43,7 +43,7 @@ Define criterios de salida para retirar el legado.
 ## Gobierno
 - **ADR**: contexto, decisión, alternativas, consecuencias, estado y criterio de revisión.
 - **Matrices de decisión**: ejecuta `scripts/decision_matrix.py` con un JSON de criterios (peso 1-3) y valoraciones (1-5) para obtener el total ponderado, el criterio que decide, la sensibilidad a pesos y valoraciones y un veredicto de robustez; si no puedes ejecutar scripts, muestra el cálculo paso a paso.
-- **Fitness functions** en CI: límites entre features, presupuestos de bundle, sin APIs deprecadas, accesibilidad automática, `strict` activo.
+- **Fitness functions** en CI: límites entre features, presupuestos de bundle, sin APIs deprecadas, accesibilidad automática, `strict` activo (explícito en TS < 6; default en TS ≥ 6).
 - **Estándares** mínimos y documentados; actualización de dependencias automatizada con cadencia definida.
 - **Deuda técnica** registrada con impacto y dueño, revisada en cada planificación.
 

@@ -1,6 +1,6 @@
 ---
 name: angular-conventions
-description: 'Convenciones de código por defecto del plugin Angular estructura de carpetas por funcionalidad más shared, páginas separadas de componentes reutilizables, un .html por componente (sin template inline), alias de tsconfig por carpeta y separadores de sección en clases. Usar cuando se cree o mueva un componente, página, servicio, guard, interceptor, modelo o util, cuando se configuren alias de tsconfig o se decida dónde ubicar código nuevo. No usar para decisiones de topología (monorepo, microfrontends); para eso, angular-architecture. Define el estilo y la estructura del código (defaults del plugin); la política de calidad del proyecto (tests, a11y, docs) va en angular-project-guidelines.'
+description: 'Convenciones de código por defecto del plugin Angular estructura de carpetas por funcionalidad más shared, páginas separadas de componentes reutilizables, un .html por componente (sin template inline), alias de tsconfig por carpeta, tsconfig estricto explícito (strict, strictTemplates) y separadores de sección en clases. Usar cuando se cree o mueva un componente, página, servicio, guard, interceptor, modelo o util, cuando se configuren alias o strictness de tsconfig o se decida dónde ubicar código nuevo. No usar para decisiones de topología (monorepo, microfrontends); para eso, angular-architecture. Define el estilo y la estructura del código (defaults del plugin); la política de calidad del proyecto (tests, a11y, docs) va en angular-project-guidelines.'
 ---
 
 # Convenciones de código Angular
@@ -70,7 +70,36 @@ import { Button } from '@shared/components/button/button';
 import { OrderService } from '../../services/order-service';
 ```
 
-## 4. Separadores de sección en clases
+## 4. TypeScript y templates estrictos
+
+`strict` depende de la versión de TypeScript (`npx tsc -v`):
+
+- **TS ≥ 6**: el default ya es `strict: true`; no hace falta escribirlo y su ausencia no es un fallo. Nunca pongas `strict: false`.
+- **TS < 6**: el default es `false`; `strict: true` es obligatorio y explícito.
+
+El resto va explícito en el `tsconfig.json` (en monorepo, en `tsconfig.base.json`); `strictTemplates` es de Angular y no lo cubre TS:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true, // solo necesario en TS < 6
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
+```
+
+- Si falta alguna clave en un proyecto nuevo, añádela. No uses `any` para esquivar errores de strict.
+- En proyecto existente sin strict, no lo actives en bloque ni cambies el `tsconfig`: propónlo como paso aparte, flag a flag.
+
+## 5. Separadores de sección en clases
 
 Delimita los bloques con este orden canónico (componentes, servicios, directivas y guards de clase):
 
@@ -89,7 +118,7 @@ Delimita los bloques con este orden canónico (componentes, servicios, directiva
 - Puedes renombrar un bloque cuando aclare (p. ej. `// ========== HTTP ==========` en un servicio con muchas llamadas).
 - No uses separadores en clases de pocas líneas sin bloques que distinguir.
 
-## 5. Documentación (con `docs: jsdoc`)
+## 6. Documentación (con `docs: jsdoc`)
 
 - Componentes **reutilizables** (`components/`): JSDoc con `@example` de uso.
 - Componentes de **página** (`pages/`): JSDoc sin `@example`.

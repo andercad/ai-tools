@@ -11,7 +11,7 @@ Obtener una imagen fiable del sistema, separando hechos con evidencia de supuest
 ## Descubrimiento
 Material que pedir, en orden de valor:
 1. `package.json` y lockfile, salida de `ng version`.
-2. `angular.json` o `project.json`, `tsconfig.json` (flags `strict`).
+2. `angular.json` o `project.json`, `tsconfig.json` y versión de TypeScript (`strict` activo = `strict: true` o TS ≥ 6 sin `strict: false`; su ausencia en TS ≥ 6 no es un hallazgo).
 3. Árbol de `src/app` (2–3 niveles), `app.config.ts` y definición de rutas.
 4. Informe de bundle, Lighthouse y, si existen, datos de campo (CrUX o RUM).
 5. Pipeline de CI/CD, Dockerfile o configuración de hosting.

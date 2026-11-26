@@ -3,7 +3,7 @@
 Marca cada punto como Cumple / No cumple / No verificado / No aplica y cita la evidencia. «No verificado» nunca equivale a «Cumple».
 
 ## Build y código
-- [ ] TypeScript `strict` sin supresiones generalizadas; sin `any` en contratos.
+- [ ] TypeScript `strict` activo (`strict: true`, o TS ≥ 6 sin `strict: false`; en TS < 6 debe estar explícito) sin supresiones generalizadas; sin `any` en contratos.
 - [ ] Presupuestos de bundle cumplidos y comprobados en CI.
 - [ ] Límites entre features verificados en CI.
 
